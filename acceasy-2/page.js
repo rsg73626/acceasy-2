@@ -12,7 +12,7 @@ class Page extends Element {
         
         this.styleVars = new Style()
         this.styleVals = new Style()
-        this.defaultCSSVarScope = 'body'
+        this.defaultCSSVarScope = 'html'
 
         acceasy.currentPage = this
     }
@@ -49,13 +49,6 @@ class Page extends Element {
         super.build(stopIfError)
 
         if (this.successBuild || (!stopIfError && this.tag != null)) {
-
-            // Setting default style
-            this.style('html, body', 'margin', 0, 'padding', 0)
-            this.style('html', 'width', '100%', 'height', '100%')
-            this.style('body', 'width', '100%', 'height', '100%', 'font-family', 'Arial', 'color', 'black')
-            this.style('h1, h2, h3, h4, h5, h6', 'margin', '10px 0')
-            this.style('h2, h3, h4, h5, h6', 'font-weight', 'normal')
 
             this.styleVars.build()
             if (this.styleVars.successBuild) {
