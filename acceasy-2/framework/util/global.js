@@ -12,17 +12,21 @@ export default window.acceasy = {
         }
     },
 
-    errorMessage: (content) => {
-        return {
-            success: false,
-            error: new SystemMessage(content, SystemMessage.Type.error)
-        }
-    },
+    // errorMessage: (content) => {
+    //     return {
+    //         success: false,
+    //         error: new SystemMessage(content, SystemMessage.Type.error)
+    //     }
+    // },
     
     success: { success: true },
 
     type: util.type, 
     array: util.array, 
-    dom: util.dom
+    object: util.object,
+    dom: util.dom,
+
+    lastTagId: 0,
+    getNewTagId: () => `acceasy-auto-tag-id-${window.acceasy.lastTagId++}`
 
 }

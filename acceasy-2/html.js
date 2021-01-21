@@ -52,6 +52,12 @@ import Br from './framework/html/text-level-semantics/Br.js'
 import I from './framework/html/text-level-semantics/I.js'
 import Span from './framework/html/text-level-semantics/Span.js'
 
+import Menu from './framework/html/custom/Menu.js'
+import MenuItem from './framework/html/custom/MenuItem.js'
+
+import MenuSize from './framework/enum/MenuSize.js'
+import MenuIconPosition from './framework/enum/MenuIconPosition.js'
+
 const tags = [
     Style,
     Img,
@@ -59,7 +65,8 @@ const tags = [
     Figcaption, Figure, Li, Main, Ol, P, Ul,
     Article, Aside, Footer, H, Header, Hgroup, Nav, Section,
     Caption, Col, Colgroup, Table, Tbody, Td, Tfoot, Th, Thead, Tr,
-    A, Abbr, Acronym, Br, I, Span
+    A, Abbr, Acronym, Br, I, Span,
+    Menu, MenuItem
 ]
 
 var html = {
@@ -72,15 +79,21 @@ var html = {
                 window[buildFunctionName] = tag.buildFunctions[buildFunctionName]
             }
         })
+        window['MenuSize'] = MenuSize,
+        window['MenuIconPosition'] = MenuIconPosition
     },
 
     setUpBuidFunctionsGloballyUsingNameSpace: (nameSpace) => {
-        window[nameSpace] = {}
+        if (!(nameSpace in window)) {
+            window[nameSpace] = {}
+        }
         tags.forEach(tag => {
             for (var buildFunctionName in tag.buildFunctions) {
                 window[nameSpace][buildFunctionName] = tag.buildFunctions[buildFunctionName]
             }
         })
+        window[nameSpace]['MenuSize'] = MenuSize,
+        window['MenuIconPosition'] = MenuIconPosition
     }
 
 }

@@ -197,23 +197,19 @@ class Grid {
     
             return true
         }
-
-        function getNewTagId() {
-            return `acceasy-auto-tag-id-${Grid.lastTagId++}`
-        }
     
         function setMissingTagIds() {
             if (!element.getId()) {
-                element.id(getNewTagId())
+                element.id(acceasy.getNewTagId())
             }
             if (acceasy.type.isArray(content)) {
                 content.forEach((c) => {
                     if (!c.getId()) {
-                        c.id(getNewTagId())
+                        c.id(acceasy.getNewTagId())
                     }
                 })
             } else if (!content.getId()) {
-                content.id(getNewTagId())
+                content.id(acceasy.getNewTagId())
             }
         }
 
@@ -330,8 +326,6 @@ class Grid {
 
 }
 
-Grid.lastTagId = 0
-
 Grid.stringToDimension = (str) => {
     if (acceasy.type.isString(str)) {
         const parts = str.toLowerCase().split('x')
@@ -435,7 +429,11 @@ export default class Element extends Grid {
     }
 
     invalidContentErrorMessageTag(content = this.content) {
-        return window.acceasy.errorMessage(`Invalid content for <${this.tagName}> tag: ${content}.`).error.tag
+        // return window.acceasy.errorMessage(`Invalid content for <${this.tagName}> tag: ${content}.`).error.tag
+        const strMessage = `Invalid content for <${this.tagName}> tag: ${content}.`
+        var tag = document.createElement('P')
+        tag.textContent = strMessage
+        return tag
     }
 
     build(stopIfError) {
@@ -518,10 +516,6 @@ export default class Element extends Grid {
         return this
     }
 
-    // selector.id() {
-    //     return `#${this.getId()}`
-    // }
-
     getClass() {
         return this.get('class')
     }
@@ -542,22 +536,6 @@ export default class Element extends Grid {
         }
         return this
     }
-
-    // style(prop, value) {
-    //     if (acceasy.type.isString(prop) && (acceasy.type.isString(value) || acceasy.type.isNumber(value))) {
-    //         const currentStyle = this.get('style') ?? ''
-    //         this.set('style', `${currentStyle}${prop}: ${value}; `)
-    //     }
-    //     return this
-    // }
-
-    // styles(...props) {
-    //     var i = 0
-    //     while(i < props.length - 1) {
-    //         this.style(props[i++], props[i++])
-    //     }
-    //     return this
-    // }
 
     style(...props) {
         if (props.length >= 2) {

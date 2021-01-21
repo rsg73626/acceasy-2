@@ -174,6 +174,20 @@ export function fillArrayWithLastValueUpToLength(array, length) {
 }
 
 /**
+ * Returns if the given JSON object contains the indicated value in the values of one of its keys.
+ * @param {JSON Object} e 
+ * @param {*} value 
+ */
+export function objectContains(objc, value) {
+    for (var key in objc) {
+        if (objc[key] == value) {
+            return true
+        }
+    }
+    return false
+}
+
+/**
  * Add the class value for the HTML tag, overwritinig it or not.
  * @param {HTMLElement} tag
  * @param {string} name The class name.
@@ -224,6 +238,9 @@ export default {
         depth: arrayDepth,
         simplify: simplifyArray,
         fillWithLastValueUpToLength: fillArrayWithLastValueUpToLength
+    },
+    object: {
+        contains: objectContains
     },
     dom: {
         cls,
