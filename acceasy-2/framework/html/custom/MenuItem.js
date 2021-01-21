@@ -28,11 +28,13 @@ if (!acceasy.didSetMenuItemFunctions) {
     }
     
     acceasy.menuitem.setExpandIcon = (icon) => {
+        if (!icon) { return }
         icon.classList.remove('fa-chevron-up')
         icon.classList.add('fa-chevron-down')
     }
     
     acceasy.menuitem.setShrinkIcon = (icon) => {
+        if (!icon) { return }
         icon.classList.remove('fa-chevron-down')
         icon.classList.add('fa-chevron-up')
     }
@@ -319,7 +321,7 @@ export default class MenuItem extends Element {
                 span.set('aria-role', 'img', 'aria-label', 'shrink and expand icon')
 
                 var pos = this.suboptionsIconPos
-                if (!this.iconName && pos == this.iconPos) {
+                if (this.iconName && pos == this.iconPos) {
                     pos = this.iconPos == MenuIconPosition.left ? MenuIconPosition.right : MenuIconPosition.left
                 }
 
