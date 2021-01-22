@@ -76,6 +76,93 @@ page('en-us')
             mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon').iconPosition(MenuIconPosition.right),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg').iconPosition(MenuIconPosition.right),
             mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon').iconPosition(MenuIconPosition.right)
+        ),
+
+        title('Personalized colors'),
+        mn(
+            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
+            mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),
+            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon')
+        )
+        .backgroundColor('pink')
+        .backgroundColorHover('white')
+        .textColor('white')
+        .textColorHover('pink')
+        .submenuBackgroundColor('lightblue')
+        .submenuBackgroundColorHover('white')
+        .submenuTextColor('white')
+        .submenuTextColorHover('lightblue'),
+
+        title('Personalized colors II'),
+        mn(
+            mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
+            .icon('fa fa-home fa-lg', 'Home icon')
+            .backgroundColor('pink').backgroundColorHover('red')
+            .textColor('red').textColorHover('pink')
+            .submenuBackgroundColor('black').submenuBackgroundColorHover('white')
+            .submenuTextColor('white').submenuTextColorHover('black'),
+
+            mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#'))
+            .icon('fa fa-handshake-o fa-lg')
+            .backgroundColor('lightgreen').backgroundColorHover('darkgreen')
+            .textColor('darkgreen').textColorHover('lightgreen')
+            .submenuBackgroundColor('purple').submenuBackgroundColorHover('white')
+            .submenuTextColor('white').submenuTextColorHover('purple'),
+
+            mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
+            .icon('fa fa-smile-o', 'Smile icon')
+            .backgroundColor('lightblue').backgroundColorHover('darkblue')
+            .textColor('darkblue').textColorHover('lightblue')
+            .submenuBackgroundColor('yellow').submenuBackgroundColorHover('black')
+            .submenuTextColor('black').submenuTextColorHover('yellow'),
+        ),
+
+        title('Personalized colors III'),
+        mn(
+            mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
+            .icon('fa fa-home fa-lg', 'Home icon')
+            .backgroundColor('pink').backgroundColorHover('red')
+            .textColor('red').textColorHover('pink')
+            .submenuBackgroundColor('red').submenuBackgroundColorHover('pink')
+            .submenuTextColor('pink').submenuTextColorHover('red'),
+
+            mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#'))
+            .icon('fa fa-handshake-o fa-lg')
+            .backgroundColor('lightgreen').backgroundColorHover('darkgreen')
+            .textColor('darkgreen').textColorHover('lightgreen')
+            .submenuBackgroundColor('darkgreen').submenuBackgroundColorHover('lightgreen')
+            .submenuTextColor('lightgreen').submenuTextColorHover('darkgreen'),
+
+            mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
+            .icon('fa fa-smile-o', 'Smile icon')
+            .backgroundColor('lightblue').backgroundColorHover('darkblue')
+            .textColor('darkblue').textColorHover('lightblue')
+            .submenuBackgroundColor('darkblue').submenuBackgroundColorHover('lightblue')
+            .submenuTextColor('lightblue').submenuTextColorHover('darkblue'),
+        ),
+
+        title('Personalized colors IV'),
+        mn(
+            mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
+            .icon('fa fa-home fa-lg', 'Home icon')
+            .backgroundColor('red').backgroundColorHover('pink')
+            .textColor('pink').textColorHover('red')
+            .submenuBackgroundColor('pink').submenuBackgroundColorHover('red')
+            .submenuTextColor('red').submenuTextColorHover('pink'),
+
+            mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#'))
+            .icon('fa fa-handshake-o fa-lg')
+            .backgroundColor('darkgreen').backgroundColorHover('lightgreen')
+            .textColor('lightgreen').textColorHover('darkgreen')
+            .submenuBackgroundColor('lightgreen').submenuBackgroundColorHover('darkgreen')
+            .submenuTextColor('darkgreen').submenuTextColorHover('lightgreen'),
+
+            mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
+            .icon('fa fa-smile-o', 'Smile icon')
+            .backgroundColor('darkblue').backgroundColorHover('lightblue')
+            .textColor('lightblue').textColorHover('darkblue')
+            .submenuBackgroundColor('lightblue').submenuBackgroundColorHover('darkblue')
+            .submenuTextColor('darkblue').submenuTextColorHover('lightblue'),
         )
         
     )

@@ -285,6 +285,62 @@ export default class MenuItem extends Element {
         return this
     }
 
+    backgroundColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-background-color', value, 'background', 'var(--menu-background-color)')
+        }
+        return this
+    }
+
+    backgroundColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-background-color-hover', value)
+        }
+        return this
+    }
+
+    textColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-text-color', value)
+        }
+        return this
+    }
+
+    textColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-text-color-hover', value)
+        }
+        return this
+    }
+
+    submenuBackgroundColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-background-color', value)
+        }
+        return this
+    }
+
+    submenuBackgroundColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-background-color-hover', value)
+        }
+        return this
+    }
+
+    submenuTextColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-text-color', value)
+        }
+        return this
+    }
+
+    submenuTextColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-text-color-hover', value)
+        }
+        return this
+    }
+
     build(stopIfError) {
         if (this.iconName) {
             const span = new Span()

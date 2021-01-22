@@ -53,19 +53,65 @@ export default class Menu extends Element {
         return this
     }
 
+    backgroundColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-background-color', value)
+        }
+        return this
+    }
+
+    backgroundColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-background-color-hover', value)
+        }
+        return this
+    }
+
+    textColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-text-color', value)
+        }
+        return this
+    }
+
+    textColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--menu-text-color-hover', value)
+        }
+        return this
+    }
+
+    submenuBackgroundColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-background-color', value)
+        }
+        return this
+    }
+
+    submenuBackgroundColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-background-color-hover', value)
+        }
+        return this
+    }
+
+    submenuTextColor(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-text-color', value)
+        }
+        return this
+    }
+
+    submenuTextColorHover(value) {
+        if (util.type.isString(value)) {
+            this.style('--submenu-text-color-hover', value)
+        }
+        return this
+    }
+
     build(stopIfError) {
         this.cls(this.menuSize)
         super.build(stopIfError)
-
-        // if (this.successBuild || (!stopIfError && this.tag != null)) {
-        //     for (var selector in this.css) {
-        //         this.tag.append(`${selector} {\n`)
-        //         for (var prop in this.css[selector]) {
-        //             this.tag.append(`   ${prop}: ${this.css[selector][prop]};\n`)
-        //         }
-        //         this.tag.append('}\n')
-        //     }
-        // }
     }
 
 }
