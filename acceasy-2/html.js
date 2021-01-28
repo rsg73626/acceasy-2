@@ -52,6 +52,12 @@ import Br from './framework/html/text-level-semantics/Br.js'
 import I from './framework/html/text-level-semantics/I.js'
 import Span from './framework/html/text-level-semantics/Span.js'
 
+import Menu from './framework/html/custom/Menu.js'
+import MenuItem from './framework/html/custom/MenuItem.js'
+
+import MenuSize from './framework/enum/MenuSize.js'
+import MenuIconPosition from './framework/enum/MenuIconPosition.js'
+
 const tags = [
     Style,
     Img,
@@ -62,25 +68,60 @@ const tags = [
     A, Abbr, Acronym, Br, I, Span
 ]
 
+const customs = [
+    Menu, MenuItem
+]
+
+const elements = [...tags, ...customs]
+
+const enums = [
+    MenuSize, MenuIconPosition
+]
+
 var html = {
 
     tags: tags,
 
-    setUpBuidFunctionsGlobally: () => {
-        tags.forEach(tag => {
-            for (var buildFunctionName in tag.buildFunctions) {
-                window[buildFunctionName] = tag.buildFunctions[buildFunctionName]
-            }
-        })
-    },
+    enums: enums,
 
-    setUpBuidFunctionsGloballyUsingNameSpace: (nameSpace) => {
-        window[nameSpace] = {}
-        tags.forEach(tag => {
-            for (var buildFunctionName in tag.buildFunctions) {
-                window[nameSpace][buildFunctionName] = tag.buildFunctions[buildFunctionName]
+    setElementsGlobally: (namespace) => {
+        if (acceasy.didSetElements) {
+            return
+        }
+
+        var replaceds = { }
+        // set elements in window function
+        const setInWindow = (key, value) => {
+            if (window[key]) {
+                replaceds[key] = window[key]
+            }
+            window[key] = value
+        }
+        // set elements in namespace in window function
+        const setInNamespace = (key, value) => {
+            window[namespace][key] = value
+        }
+
+        var set = setInWindow
+        if (namespace) {
+            setInWindow(namespace, {})
+            set = setInNamespace
+        }
+ 
+        elements.forEach(tag => {
+            for (var name in tag.buildFunctions) {
+                set(name, tag.buildFunctions[name])
             }
         })
+        enums.forEach(e => {
+            set(e.___name___, e)
+        })
+
+        if (namespace) {
+            setInWindow('replaceds', replaceds)
+        }
+
+        acceasy.didSetElements = true
     }
 
 }

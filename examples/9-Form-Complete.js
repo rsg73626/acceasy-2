@@ -1,7 +1,7 @@
 import page from '../acceasy-2/page.js'
 import html from '../acceasy-2/html.js'
 
-html.setUpBuidFunctionsGlobally()
+html.setElementsGlobally()
 
 page('en-us')
     .style('fieldset', 'display', 'flex', 'flex-direction', 'column', 'background', 'pink', 'border-color', 'black', 'border-radius', '10px', 'margin', '15px 0')

@@ -1,7 +1,7 @@
 import page from '../acceasy-2/page.js'
 import html from '../acceasy-2/html.js'
 
-html.setUpBuidFunctionsGlobally()
+html.setElementsGlobally()
 
 page('en-us')
     .style('p', 'font-family', 'Helvetica', 'font-size', '24px', 'font-weight', 'bold', 'color', 'white')

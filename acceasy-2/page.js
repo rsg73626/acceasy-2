@@ -1,5 +1,6 @@
 import Element from './framework/html/Element.js'
 import Style from './framework/html/document-metadata/Style.js'
+import html from './html.js'
 
 class Page extends Element {
 
@@ -64,17 +65,6 @@ class Page extends Element {
 }
 
 export default (lang) => {
+    html.setElementsGlobally()
     return new Page(lang)
 }
-
-/*
-
-CONFIGURATIONS
-
-lang
-metas
-title
-
-DEV OPTION TO SEE LAYOUT INDICATIONS
-
-*/
