@@ -3,7 +3,7 @@ import html from '../acceasy-2/html.js'
 
 html.setElementsGlobally()
 
-page('en-us')
+page.newUsingLanguage('en-us')
     .cssVar('--header-color', 'red', '--main-color', 'blue', '--aside-color', 'green', '--footer-color', 'purple')
     .style('*', 'margin', 0, 'padding', 0)
     .style('html', 'width', '100%', 'height', '100%', 'color', 'white', 'font-family', 'Helvetica', 'font-size', '14px')

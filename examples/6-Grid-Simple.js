@@ -3,7 +3,7 @@ import html from '../acceasy-2/html.js'
 
 html.setElementsGlobally()
 
-page('en-us')
+page.newUsingLanguage('en-us')
     .style('p', 'font-family', 'Helvetica', 'font-size', '24px', 'font-weight', 'bold', 'color', 'white')
     .body(
         p('A').style('background', 'red'), 

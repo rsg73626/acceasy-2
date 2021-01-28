@@ -14,7 +14,7 @@ const sudokuBlock = () => {
     })).grid('3X3').gridSize('50px', '50px')
 }
 
-page('en-us')
+page.newUsingLanguage('en-us')
     .body(
         sudokuBlock(), sudokuBlock(), sudokuBlock(), 
         sudokuBlock(), sudokuBlock(), sudokuBlock(), 

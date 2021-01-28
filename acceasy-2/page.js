@@ -64,7 +64,25 @@ class Page extends Element {
     }
 }
 
-export default (lang) => {
-    html.setElementsGlobally()
-    return new Page(lang)
+export default {
+
+    /**
+     * Use this function to create a new instance of an Acceasy page.
+     * It automatically sets the Acceasy functions globally without namespace.
+     * @param {String} lang Value for the attribute `lang` for the tag `<body>`.
+     */
+    newUsingLanguage: (lang) => {
+        html.setElementsGlobally()
+        return new Page(lang)
+    },
+
+    /**
+     * Use this function to set the Acceasy funtions globally using a namespace or not.
+     * It'll overwrite the default one.
+     * @param {String} namespace 
+     */
+    setElementsGlobally: (namespace = null) => {
+        html.setElementsGlobally(namespace)
+    }
+
 }

@@ -3,7 +3,7 @@ import html from '../acceasy-2/html.js'
 
 html.setElementsGlobally()
 
-page('en-us')
+page.newUsingLanguage('en-us')
     .style('fieldset', 'display', 'flex', 'flex-direction', 'column', 'background', 'pink', 'border-color', 'black', 'border-radius', '10px', 'margin', '15px 0')
     .style('fieldset legend', 'font-weight', 'bold', 'color', 'white', 'background', 'black', 'font-size', '20px', 'padding', '5px', 'border-radius', '4px')
     .style('fieldset > *', 'margin', '5px 0')

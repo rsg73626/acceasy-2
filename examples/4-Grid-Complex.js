@@ -3,7 +3,7 @@ import html from '../acceasy-2/html.js'
 
 html.setElementsGlobally()
 
-page('en-us')
+page.newUsingLanguage('en-us')
     .style('p', 'background-color', 'lightblue', 'width', '100%', 'height', '100%')
     .style('p', 'display', 'flex', 'justify-content', 'center', 'align-items', 'center')
     .style('p', 'margin', 0)

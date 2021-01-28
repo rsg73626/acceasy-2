@@ -3,7 +3,7 @@ import html from '../acceasy-2/html.js'
 
 html.setElementsGlobally()
 
-page('en-us')
+page.newUsingLanguage('en-us')
     // .style('*', 'margin', 0, 'padding', 0)
     // .style('html, body', 'width', '100%', 'height', '100%', 'font-family', 'Helvetica', 'font-size', '22px')
     .style('h2, h3, h4, h5, h6', 'font-weight', 'normal')

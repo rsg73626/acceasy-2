@@ -2,7 +2,7 @@ import page from '../acceasy-2/page.js'
 import html from '../acceasy-2/html.js'
 
 html.setElementsGlobally()
-const myPage = page('en-us')
+const myPage = page.newUsingLanguage('en-us')
 
 myPage
     .cssVar('--font', '"Arial"')
