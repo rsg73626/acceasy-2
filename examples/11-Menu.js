@@ -1,14 +1,10 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
-import MenuIconPosition from '../acceasy-2/framework/enum/MenuIconPosition.js';
-
-html.setUpBuidFunctionsGlobally()
 
 const defaultMenu = () => mn(mi('Item 1', '#'), mi('Item 2', '#'), mi('Item 3', '#'))
 
 page('en-us')
     .style('.acceasy-menu', 'margin-top', '10px', 'margin-bottom', '10px')
-    .style('body', 'width', '100%', 'height', '2000px')
+    .style('body', 'width', '100%', 'height', '2500px')
     .body(
         title('Menu small'),
         defaultMenu().size(MenuSize.small),
@@ -163,7 +159,30 @@ page('en-us')
             .textColor('lightblue').textColorHover('darkblue')
             .submenuBackgroundColor('lightblue').submenuBackgroundColorHover('darkblue')
             .submenuTextColor('darkblue').submenuTextColorHover('lightblue'),
+        ),
+
+        title('Personalized colors using shortcut'),
+        mn(
+            mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
+            .icon('fa fa-home fa-lg', 'Home icon')
+            .colors('red', 'pink', 'pink', 'red', 'pink', 'red', 'red', 'pink'),
+
+            mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#'))
+            .icon('fa fa-handshake-o fa-lg')
+            .colors('darkgreen', 'lightgreen', 'lightgreen', 'darkgreen', 'lightgreen', 'darkgreen', 'darkgreen', 'lightgreen'),
+
+            mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
+            .icon('fa fa-smile-o', 'Smile icon')
+            .colors('darkblue', 'lightblue', 'lightblue', 'darkblue', 'lightblue', 'darkblue', 'darkblue', 'lightblue'),
+        ),
+
+        title('Personalized colors using shortcut II'),
+        mn(
+            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
+            mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),
+            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon')
         )
+        .colors('pink', 'white', 'white', 'pink', 'lightblue', 'white', 'white', 'lightblue'),
         
     )
     .build();

@@ -1,6 +1,8 @@
 
 export default {
 
+    ___name___: 'MenuSize',
+
     small: 'acceasy-menu-small',
     medium: 'acceasy-menu-medium',
     large: 'acceasy-menu-large',

@@ -3,7 +3,6 @@ import A from '../text-level-semantics/A.js'
 import Span from '../text-level-semantics/Span.js'
 import Ul from '../grouping-content/Ul.js'
 import MenuIconPosition from '../../enum/MenuIconPosition.js'
-import util from '../../util/util.js'
 
 if (!acceasy.didSetKeys) {
     acceasy.keys = {
@@ -21,30 +20,30 @@ if (!acceasy.didSetKeys) {
 }
 
 if (!acceasy.didSetMenuItemFunctions) {
-    acceasy.menuitem =  { }
+    acceasy.framework.menuitem =  { }
 
-    acceasy.menuitem.isSubmenuExpanded = (item) => {
+    acceasy.framework.menuitem.isSubmenuExpanded = (item) => {
         return item.lastChild.style.display == 'block'
     }
     
-    acceasy.menuitem.setExpandIcon = (icon) => {
+    acceasy.framework.menuitem.setExpandIcon = (icon) => {
         if (!icon) { return }
         icon.classList.remove('fa-chevron-up')
         icon.classList.add('fa-chevron-down')
     }
     
-    acceasy.menuitem.setShrinkIcon = (icon) => {
+    acceasy.framework.menuitem.setShrinkIcon = (icon) => {
         if (!icon) { return }
         icon.classList.remove('fa-chevron-down')
         icon.classList.add('fa-chevron-up')
     }
     
-    acceasy.menuitem.expandMenu = (item, isHoverAction, updateFocus) => {
+    acceasy.framework.menuitem.expandMenu = (item, isHoverAction, updateFocus) => {
         const link = item.firstChild
         const shrinkExpandIcon = link.getElementsByClassName('acceasy-menuitem-icon-suboptions')[0]
         const submenu = item.lastChild
         submenu.style.display = 'block'
-        acceasy.menuitem.setShrinkIcon(shrinkExpandIcon)
+        acceasy.framework.menuitem.setShrinkIcon(shrinkExpandIcon)
         if (isHoverAction) {
             item.style.background = 'var(--menu-background-color-hover)'
             link.style.color = 'var(--menu-text-color-hover)'
@@ -59,12 +58,12 @@ if (!acceasy.didSetMenuItemFunctions) {
         }
     }
     
-    acceasy.menuitem.shrinkMenu = (item, isHoverAction, updateFocus) => {
+    acceasy.framework.menuitem.shrinkMenu = (item, isHoverAction, updateFocus) => {
         const link = item.firstChild
         const shrinkExpandIcon = link.getElementsByClassName('acceasy-menuitem-icon-suboptions')[0]
         const submenu = item.lastChild
         submenu.style.display = 'none'
-        acceasy.menuitem.setExpandIcon(shrinkExpandIcon)
+        acceasy.framework.menuitem.setExpandIcon(shrinkExpandIcon)
         link.setAttribute('aria-expanded', 'false')
         if (isHoverAction) {
             item.style.background = 'var(--menu-background-color)'
@@ -75,7 +74,7 @@ if (!acceasy.didSetMenuItemFunctions) {
         }
     }
     
-    acceasy.menuitem.subMenuItemOnKeyDown = (item, link, parent, keycode) => {
+    acceasy.framework.menuitem.subMenuItemOnKeyDown = (item, link, parent, keycode) => {
         const menuItemWithSuboptions = parent.parentElement
         const allMenuItems = parent.children
         const amountOfMenuItems = allMenuItems.length
@@ -97,17 +96,17 @@ if (!acceasy.didSetMenuItemFunctions) {
                 nextMenuItemLink.focus()
             }
         } else if (keycode == acceasy.keys.right_arrow || keycode == acceasy.keys.left_arrow) {
-            acceasy.menuitem.submenuItemOnKeyDownLeftOrRight(
+            acceasy.framework.menuitem.submenuItemOnKeyDownLeftOrRight(
                 menuItemWithSuboptions, 
                 menuItemWithSuboptions.firstChild, 
                 menuItemWithSuboptions.parentElement, 
                 keycode)
         } else if (keycode == acceasy.keys.esc) {
-            acceasy.menuitem.shrinkMenu(menuItemWithSuboptions, false, true)
+            acceasy.framework.menuitem.shrinkMenu(menuItemWithSuboptions, false, true)
         }
     }
     
-    acceasy.menuitem.submenuItemOnKeyDownLeftOrRight = (item, link, parent, keycode) => {
+    acceasy.framework.menuitem.submenuItemOnKeyDownLeftOrRight = (item, link, parent, keycode) => {
         const menuItems = parent.children
         const amountOfMenuItems = menuItems.length
         const indexOfMenuItem = Array.prototype.slice.call(menuItems).indexOf(item)
@@ -126,15 +125,15 @@ if (!acceasy.didSetMenuItemFunctions) {
             }
         }
         if (next.classList.contains('acceasy-menuitem-with-suboptions')) {
-            acceasy.menuitem.expandMenu(next, false, false)
+            acceasy.framework.menuitem.expandMenu(next, false, false)
         } 
         next.firstChild.focus()
-        acceasy.menuitem.shrinkMenu(item, false, false)
+        acceasy.framework.menuitem.shrinkMenu(item, false, false)
     }
     
-    acceasy.menuitem.menuItemWithSuboptionsOnKeyDown = (item, link, parent, keycode) => {
+    acceasy.framework.menuitem.menuItemWithSuboptionsOnKeyDown = (item, link, parent, keycode) => {
         if (keycode == acceasy.keys.left_arrow || keycode == acceasy.keys.right_arrow) {
-            acceasy.menuitem.menuItemRootOnKeyDown(item, link, parent, keycode)
+            acceasy.framework.menuitem.menuItemRootOnKeyDown(item, link, parent, keycode)
         } else {
             const shrinkExpandIcon = link.getElementsByClassName('acceasy-menuitem-icon-suboptions')[0]
             const submenu = item.lastChild
@@ -144,19 +143,19 @@ if (!acceasy.didSetMenuItemFunctions) {
             const submenuFirstLink = submenuFirstItem.firstChild
             const submenuLastItem = allSubmenuItems[amountOfSubmenuItems-1]
             const submenuLastLink = submenuLastItem.firstChild
-            if ((keycode == acceasy.keys.esc) && acceasy.menuitem.isSubmenuExpanded(item)) {
+            if ((keycode == acceasy.keys.esc) && acceasy.framework.menuitem.isSubmenuExpanded(item)) {
                 submenu.style.display = 'none'
                 link.setAttribute('aria-expanded', 'false')
-                acceasy.menuitem.setExpandIcon(shrinkExpandIcon)
+                acceasy.framework.menuitem.setExpandIcon(shrinkExpandIcon)
             } else if (keycode == acceasy.keys.down_arrow || keycode == acceasy.keys.enter || keycode == acceasy.keys.space) {
                 submenu.style.display = 'block'
-                acceasy.menuitem.setShrinkIcon(shrinkExpandIcon)
+                acceasy.framework.menuitem.setShrinkIcon(shrinkExpandIcon)
                 submenuFirstLink.focus()
                 link.setAttribute('aria-expanded', 'true')
                 item.removeAttribute('onkeydown')
             } else if (keycode == acceasy.keys.up_arrow) {
                 submenu.style.display = 'block'
-                acceasy.menuitem.setShrinkIcon(shrinkExpandIcon)
+                acceasy.framework.menuitem.setShrinkIcon(shrinkExpandIcon)
                 submenuLastLink.focus()
                 link.setAttribute('aria-expanded', 'true')
                 item.removeAttribute('onkeydown')
@@ -164,7 +163,7 @@ if (!acceasy.didSetMenuItemFunctions) {
         }
     }
     
-    acceasy.menuitem.menuItemRootOnKeyDown = (item, link, parent, keycode) => {
+    acceasy.framework.menuitem.menuItemRootOnKeyDown = (item, link, parent, keycode) => {
         const menuItems = parent.children
         const amountOfMenuItems = menuItems.length
         const indexOfMenuitem = Array.prototype.slice.call(menuItems).indexOf(item)
@@ -182,45 +181,45 @@ if (!acceasy.didSetMenuItemFunctions) {
                 next = menuItems[amountOfMenuItems-1]
             }
         } 
-        if (util.type.isObject(next)) {
+        if (acceasy.type.isObject(next)) {
             next.firstChild.focus()
         }
     }
     
-    acceasy.menuitem.itemOnKeyDown = (item, event) => {
+    acceasy.framework.menuitem.itemOnKeyDown = (item, event) => {
         const keycode = event.keyCode
         const link = item.firstChild
         const parent = item.parentElement
     
         if (parent.classList.contains('acceasy-submenu-list')) {
-            acceasy.menuitem.subMenuItemOnKeyDown(item, link, parent, keycode)
+            acceasy.framework.menuitem.subMenuItemOnKeyDown(item, link, parent, keycode)
         } else if (item.classList.contains('acceasy-menuitem-with-suboptions')) {
-            acceasy.menuitem.menuItemWithSuboptionsOnKeyDown(item, link, parent, keycode)
+            acceasy.framework.menuitem.menuItemWithSuboptionsOnKeyDown(item, link, parent, keycode)
         } else {
-            acceasy.menuitem.menuItemRootOnKeyDown(item, link, parent, keycode)
+            acceasy.framework.menuitem.menuItemRootOnKeyDown(item, link, parent, keycode)
         }
     }
     
-    acceasy.menuitem.itemOnMouseOver = (item) => {
-        acceasy.menuitem.expandMenu(item, true)
+    acceasy.framework.menuitem.itemOnMouseOver = (item) => {
+        acceasy.framework.menuitem.expandMenu(item, true)
     }
     
-    acceasy.menuitem.itemOnMouseLeave = (item) => {
-        acceasy.menuitem.shrinkMenu(item, true)
+    acceasy.framework.menuitem.itemOnMouseLeave = (item) => {
+        acceasy.framework.menuitem.shrinkMenu(item, true)
     }
     
-    acceasy.menuitem.linkWithSuboptionsOnclick = (link) => {
-        if (acceasy.menuitem.isSubmenuExpanded(link.parentElement)) {
-            acceasy.menuitem.shrinkMenu(link.parentElement, false, true)
+    acceasy.framework.menuitem.linkWithSuboptionsOnclick = (link) => {
+        if (acceasy.framework.menuitem.isSubmenuExpanded(link.parentElement)) {
+            acceasy.framework.menuitem.shrinkMenu(link.parentElement, false, true)
         } else {
-            acceasy.menuitem.expandMenu(link.parentElement, false, true)
+            acceasy.framework.menuitem.expandMenu(link.parentElement, false, true)
         }
     }
     
-    acceasy.menuitem.linkOnFocus = (link) => {
+    acceasy.framework.menuitem.linkOnFocus = (link) => {
         const menuItem = link.parentElement
         if (menuItem.classList.contains('acceasy-menuitem-with-suboptions')) {
-            menuItem.setAttribute('onkeydown', 'acceasy.menuitem.itemOnKeyDown(this, event)')
+            menuItem.setAttribute('onkeydown', 'acceasy.framework.menuitem.itemOnKeyDown(this, event)')
         }
     }
 
@@ -244,7 +243,7 @@ export default class MenuItem extends Element {
 
         this.cls('acceasy-menuitem')
         this.set('role', 'none')
-        this.set('onkeydown', 'acceasy.menuitem.itemOnKeyDown(this, event)')
+        this.set('onkeydown', 'acceasy.framework.menuitem.itemOnKeyDown(this, event)')
 
         a.cls('acceasy-menuitem-link')
         a.set('role', 'menuitem')
@@ -252,17 +251,17 @@ export default class MenuItem extends Element {
     }
 
     icon(name, description = null) {
-        if (util.type.isString(name)) {
+        if (acceasy.type.isString(name)) {
             this.iconName = name
         }
-        if (util.type.isString(description)) {
+        if (acceasy.type.isString(description)) {
             this.iconDescription = description
         }
         return this
     }
 
     iconPosition(value) {
-        if (util.object.contains(MenuIconPosition, value)) {
+        if (acceasy.object.contains(MenuIconPosition, value)) {
             this.iconPos = value
         }
         return this
@@ -286,58 +285,76 @@ export default class MenuItem extends Element {
     }
 
     backgroundColor(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--menu-background-color', value, 'background', 'var(--menu-background-color)')
         }
         return this
     }
 
     backgroundColorHover(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--menu-background-color-hover', value)
         }
         return this
     }
 
     textColor(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--menu-text-color', value)
         }
         return this
     }
 
     textColorHover(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--menu-text-color-hover', value)
         }
         return this
     }
 
     submenuBackgroundColor(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--submenu-background-color', value)
         }
         return this
     }
 
     submenuBackgroundColorHover(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--submenu-background-color-hover', value)
         }
         return this
     }
 
     submenuTextColor(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--submenu-text-color', value)
         }
         return this
     }
 
     submenuTextColorHover(value) {
-        if (util.type.isString(value)) {
+        if (acceasy.type.isString(value)) {
             this.style('--submenu-text-color-hover', value)
         }
+        return this
+    }
+
+    /**
+     * Configures the menu item colors for `background`, `background:hover`, `text`, `text:hover`, `submenu-background`, `submenu-background:hover`, `submenu-text`, `submenu-text:hover`.
+     * It overwrites the menu configurations.
+     * @param  {...String} values The name of the colors to be used in any CSS valid color format.
+     */
+    colors(...values) {
+        const colors = [...values, ...Array(8 - values.length).fill(null)]
+        this.backgroundColor(colors[0])
+        this.backgroundColorHover(colors[1])
+        this.textColor(colors[2])
+        this.textColorHover(colors[3])
+        this.submenuBackgroundColor(colors[4])
+        this.submenuBackgroundColorHover(colors[5])
+        this.submenuTextColor(colors[6])
+        this.submenuTextColorHover(colors[7])
         return this
     }
 
@@ -360,15 +377,15 @@ export default class MenuItem extends Element {
             this.link.cls(`acceasy-menuitem-link-icon-${this.iconPos}`)
         }
 
-        if (!util.array.isEmpty(this.subMenu)) {
+        if (!acceasy.array.isEmpty(this.subMenu)) {
             this.cls('acceasy-menuitem-with-suboptions', true)
-            this.set('onmouseover', 'acceasy.menuitem.itemOnMouseOver(this)')
-            this.set('onmouseleave', 'acceasy.menuitem.itemOnMouseLeave(this)')
+            this.set('onmouseover', 'acceasy.framework.menuitem.itemOnMouseOver(this)')
+            this.set('onmouseleave', 'acceasy.framework.menuitem.itemOnMouseLeave(this)')
 
             this.link.set('aria-haspopup', 'true')
             this.link.set('aria-expanded', 'false')
-            this.link.set('onclick', 'acceasy.menuitem.linkWithSuboptionsOnclick(this)')
-            this.link.set('onfocus', 'acceasy.menuitem.linkOnFocus(this)')
+            this.link.set('onclick', 'acceasy.framework.menuitem.linkWithSuboptionsOnclick(this)')
+            this.link.set('onfocus', 'acceasy.framework.menuitem.linkOnFocus(this)')
 
             if (this.suboptionsIcon) {
                 const span = new Span()
@@ -382,9 +399,9 @@ export default class MenuItem extends Element {
                 }
 
                 if (pos == MenuIconPosition.left) {
-                    this.link.content = util.type.isArray(this.link.content) ? [span, ...this.link.content] : [span, this.link.content]
+                    this.link.content = acceasy.type.isArray(this.link.content) ? [span, ...this.link.content] : [span, this.link.content]
                 } else {
-                    this.link.content = util.type.isArray(this.link.content) ? [...this.link.content, span] : [this.link.content, span]
+                    this.link.content = acceasy.type.isArray(this.link.content) ? [...this.link.content, span] : [this.link.content, span]
                 }
 
                 if (this.iconName) {

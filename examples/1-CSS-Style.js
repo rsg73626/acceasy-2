@@ -1,7 +1,7 @@
 import page from '../acceasy-2/page.js'
 import html from '../acceasy-2/html.js'
 
-html.setUpBuidFunctionsGlobally()
+html.setElementsGlobally()
 const myPage = page('en-us')
 
 myPage

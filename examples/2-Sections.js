@@ -1,7 +1,7 @@
 import page from '../acceasy-2/page.js'
 import html from '../acceasy-2/html.js'
 
-html.setUpBuidFunctionsGlobally()
+html.setElementsGlobally()
 
 page('en-us')
     .cssVar('--header-color', 'red', '--main-color', 'blue', '--aside-color', 'green', '--footer-color', 'purple')

@@ -65,35 +65,63 @@ const tags = [
     Figcaption, Figure, Li, Main, Ol, P, Ul,
     Article, Aside, Footer, H, Header, Hgroup, Nav, Section,
     Caption, Col, Colgroup, Table, Tbody, Td, Tfoot, Th, Thead, Tr,
-    A, Abbr, Acronym, Br, I, Span,
+    A, Abbr, Acronym, Br, I, Span
+]
+
+const customs = [
     Menu, MenuItem
+]
+
+const elements = [...tags, ...customs]
+
+const enums = [
+    MenuSize, MenuIconPosition
 ]
 
 var html = {
 
     tags: tags,
 
-    setUpBuidFunctionsGlobally: () => {
-        tags.forEach(tag => {
-            for (var buildFunctionName in tag.buildFunctions) {
-                window[buildFunctionName] = tag.buildFunctions[buildFunctionName]
-            }
-        })
-        window['MenuSize'] = MenuSize,
-        window['MenuIconPosition'] = MenuIconPosition
-    },
+    enums: enums,
 
-    setUpBuidFunctionsGloballyUsingNameSpace: (nameSpace) => {
-        if (!(nameSpace in window)) {
-            window[nameSpace] = {}
+    setElementsGlobally: (namespace) => {
+        if (acceasy.didSetElements) {
+            return
         }
-        tags.forEach(tag => {
-            for (var buildFunctionName in tag.buildFunctions) {
-                window[nameSpace][buildFunctionName] = tag.buildFunctions[buildFunctionName]
+
+        var replaceds = { }
+        // set elements in window function
+        const setInWindow = (key, value) => {
+            if (window[key]) {
+                replaceds[key] = window[key]
+            }
+            window[key] = value
+        }
+        // set elements in namespace in window function
+        const setInNamespace = (key, value) => {
+            window[namespace][key] = value
+        }
+
+        var set = setInWindow
+        if (namespace) {
+            setInWindow(namespace, {})
+            set = setInNamespace
+        }
+ 
+        elements.forEach(tag => {
+            for (var name in tag.buildFunctions) {
+                set(name, tag.buildFunctions[name])
             }
         })
-        window[nameSpace]['MenuSize'] = MenuSize,
-        window['MenuIconPosition'] = MenuIconPosition
+        enums.forEach(e => {
+            set(e.___name___, e)
+        })
+
+        if (namespace) {
+            setInWindow('replaceds', replaceds)
+        }
+
+        acceasy.didSetElements = true
     }
 
 }
