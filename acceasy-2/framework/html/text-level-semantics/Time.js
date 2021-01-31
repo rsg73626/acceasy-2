@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Time extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Time.tagName, content, true, false, true)
     }
 

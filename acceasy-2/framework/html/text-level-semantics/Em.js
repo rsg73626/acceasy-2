@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Em extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Em.tagName, content, true, false, true)
     }
 

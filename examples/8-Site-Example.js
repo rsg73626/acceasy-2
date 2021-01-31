@@ -98,7 +98,7 @@ page.newUsingLanguage('en-US')
         const colors = ['lightgreen', 'orange', 'lightblue', 'violet'];
         const ids = ['about', 'portfolio', 'clients', 'contactme'];
         ids.forEach((str, i) => { 
-            const link = document.getElementById(`${str}-link`); console.log(link)
+            const link = document.getElementById(`${str}-link`)
             const section = document.getElementById(`${str}`)
             link.addEventListener('mouseover', () => { section.style.background = colors[i % colors.length] })
             link.addEventListener('mouseout', () => { section.style.background = 'white' })

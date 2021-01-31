@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Kbd extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Kbd.tagName, content, true, false, true)
     }
 

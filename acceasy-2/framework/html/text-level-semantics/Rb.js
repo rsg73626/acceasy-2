@@ -3,7 +3,7 @@ import Element from '../Element.js'
 export default class Rb extends Element {
 
     constructor(content = null) {
-        super(Rb.tagName, content, true, true, true)
+        super(Rb.tagName, content)
     }
 
 }

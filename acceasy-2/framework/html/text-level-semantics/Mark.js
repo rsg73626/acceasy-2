@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Mark extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Mark.tagName, content, true, false, true)
     }
 

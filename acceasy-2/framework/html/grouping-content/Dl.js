@@ -2,8 +2,8 @@ import Element from '../Element.js'
 
 export default class Dl extends Element {
 
-    constructor(content) {
-        super(Dl.tagName, content, true, true, true)
+    constructor(content = null) {
+        super(Dl.tagName, content)
     }
 
 }

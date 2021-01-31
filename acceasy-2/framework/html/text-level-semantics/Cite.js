@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Cite extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Cite.tagName, content, true, false, true)
     }
 

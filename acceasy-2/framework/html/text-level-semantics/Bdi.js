@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Bdi extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Bdi.tagName, content, true, false, true)
     }
 

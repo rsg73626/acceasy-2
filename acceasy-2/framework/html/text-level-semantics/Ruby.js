@@ -3,7 +3,7 @@ import Element from '../Element.js'
 export default class Ruby extends Element {
 
     constructor(content = null) {
-        super(Ruby.tagName, content, true, true, true)
+        super(Ruby.tagName, content)
     }
 
 }

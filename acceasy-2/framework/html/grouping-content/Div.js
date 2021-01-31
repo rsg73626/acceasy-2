@@ -2,8 +2,8 @@ import Element from '../Element.js'
 
 export default class Div extends Element {
 
-    constructor(content) {
-        super(Div.tagName, content, true, true, true)
+    constructor(content = null) {
+        super(Div.tagName, content)
     }
 
 }

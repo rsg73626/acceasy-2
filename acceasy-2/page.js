@@ -7,7 +7,7 @@ acceasy.didBuildCurrentPage = false
 class Page extends Element {
 
     constructor(lang) {
-        super('body', [], true, true, true, ['string', 'number'])
+        super('body', [])
         
         this.lang(lang)
         this.tag = document.body

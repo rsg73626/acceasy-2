@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Samp extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Samp.tagName, content, true, false, true)
     }
 

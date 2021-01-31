@@ -2,7 +2,7 @@ import Element from '../Element.js'
 
 export default class Bdo extends Element {
 
-    constructor(content = null) {
+    constructor(content) {
         super(Bdo.tagName, content, true, false, true)
     }
 

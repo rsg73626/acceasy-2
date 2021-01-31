@@ -3,7 +3,7 @@ import Element from '../Element.js'
 export default class Footer extends Element {
 
     constructor(content = null) {
-        super(Footer.tagName, content, true, true, true, ['string', 'number'])
+        super(Footer.tagName, content)
     }
 
 }
