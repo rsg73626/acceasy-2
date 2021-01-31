@@ -17,12 +17,21 @@ import Progress from './framework/html/forms/Progress.js'
 import Select from './framework/html/forms/Select.js'
 import Textarea from './framework/html/forms/Textarea.js'
 
+import Address from './framework/html/grouping-content/Address.js'
+import Blockquote from './framework/html/grouping-content/Blockquote.js'
+import Dd from './framework/html/grouping-content/Dd.js'
+import Div from './framework/html/grouping-content/Div.js'
+import Dl from './framework/html/grouping-content/Dl.js'
+import Dt from './framework/html/grouping-content/Dt.js'
 import Figcaption from './framework/html/grouping-content/Figcaption.js'
 import Figure from './framework/html/grouping-content/Figure.js'
+import Hr from './framework/html/grouping-content/Hr.js'
+import Kbd from './framework/html/text-level-semantics/Kbd.js'
 import Li from './framework/html/grouping-content/Li.js'
 import Main from './framework/html/grouping-content/Main.js'
 import Ol from './framework/html/grouping-content/Ol.js'
 import P from './framework/html/grouping-content/P.js'
+import Pre from './framework/html/grouping-content/Pre.js'
 import Ul from './framework/html/grouping-content/Ul.js'
 
 import Article from './framework/html/sections/Article.js'
@@ -48,9 +57,34 @@ import Tr from './framework/html/tabular-data/Tr.js'
 import A from './framework/html/text-level-semantics/A.js'
 import Abbr from './framework/html/text-level-semantics/Abbr.js'
 import Acronym from './framework/html/text-level-semantics/Acronym.js'
+import B from './framework/html/text-level-semantics/B.js'
+import Bdi from './framework/html/text-level-semantics/Bdi.js'
+import Bdo from './framework/html/text-level-semantics/Bdo.js'
 import Br from './framework/html/text-level-semantics/Br.js'
+import Cite from './framework/html/text-level-semantics/Cite.js'
+import Code from './framework/html/text-level-semantics/Code.js'
+import Data from './framework/html/text-level-semantics/Data.js'
+import Dfn from './framework/html/text-level-semantics/Dfn.js'
+import Em from './framework/html/text-level-semantics/Em.js'
 import I from './framework/html/text-level-semantics/I.js'
+import Mark from './framework/html/text-level-semantics/Mark.js'
+import Q from './framework/html/text-level-semantics/Q.js'
+import Rb from './framework/html/text-level-semantics/Rb.js'
+import Rp from './framework/html/text-level-semantics/Rp.js'
+import Rt from './framework/html/text-level-semantics/Rt.js'
+import Rtc from './framework/html/text-level-semantics/Rtc.js'
+import Ruby from './framework/html/text-level-semantics/Ruby.js'
+import S from './framework/html/text-level-semantics/S.js'
+import Samp from './framework/html/text-level-semantics/Samp.js'
+import Small from './framework/html/text-level-semantics/Small.js'
 import Span from './framework/html/text-level-semantics/Span.js'
+import Strong from './framework/html/text-level-semantics/Strong.js'
+import Sub from './framework/html/text-level-semantics/Sub.js'
+import Sup from './framework/html/text-level-semantics/Sup.js'
+import Time from './framework/html/text-level-semantics/Time.js'
+import U from './framework/html/text-level-semantics/U.js'
+import Var from './framework/html/text-level-semantics/Var.js'
+import Wbr from './framework/html/text-level-semantics/Wbr.js'
 
 import Menu from './framework/html/custom/Menu.js'
 import MenuItem from './framework/html/custom/MenuItem.js'
@@ -62,10 +96,10 @@ const tags = [
     Style,
     Img,
     Button, Datalist, Fieldset, Form, Input, Label, Legend, Meter, Optgroup, Option, Output, Progress, Select, Textarea,
-    Figcaption, Figure, Li, Main, Ol, P, Ul,
+    Address, Blockquote, Dd, Div, Dl, Dt, Figcaption, Figure, Hr, Kbd, Li, Main, Ol, S, Samp, Small, Sub, Sup, P, Pre, Ul,
     Article, Aside, Footer, H, Header, Hgroup, Nav, Section,
     Caption, Col, Colgroup, Table, Tbody, Td, Tfoot, Th, Thead, Tr,
-    A, Abbr, Acronym, Br, I, Span
+    A, Abbr, Acronym, B, Bdi, Bdo, Br, Cite, Code, Data, Dfn, Em, I, Mark, Q, Rb, Rp, Rt, Rtc, Ruby, Span, Strong, Time, U, Var, Wbr
 ]
 
 const customs = [

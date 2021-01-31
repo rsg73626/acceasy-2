@@ -1,9 +1,6 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page.newUsingLanguage('en-us')
+page.newUsingLanguage('en-US')
     .body(
         p('Content 1'),
         p('Content 2'),
@@ -62,4 +59,4 @@ page.newUsingLanguage('en-us')
         ).grid([1, 2, 3])
     )
     .grid([1, 2, 3, 4], 5, 6, 7, 8)
-    .build()
+    

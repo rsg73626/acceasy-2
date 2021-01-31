@@ -485,13 +485,6 @@ export default class Element extends Grid {
 
     // Getters and Setters
 
-    lang(value) {
-        if (acceasy.type.isString(value)) {
-            this.set('lang', value)
-        }
-        return this
-    }
-
     get(prop) {
         return this.props[prop]
     }
@@ -503,6 +496,20 @@ export default class Element extends Grid {
                     this.props[props[i]] = props[i + 1]
                 }
             }
+        }
+        return this
+    }
+
+    lang(value) {
+        if (acceasy.type.isString(value)) {
+            this.set('lang', value)
+        }
+        return this
+    }
+
+    title(value) {
+        if(acceasy.type.isString(value) || acceasy.type.isNumber(value)) {
+            this.set('title', value)
         }
         return this
     }

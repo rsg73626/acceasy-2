@@ -2,6 +2,8 @@ import Element from './framework/html/Element.js'
 import Style from './framework/html/document-metadata/Style.js'
 import html from './html.js'
 
+acceasy.didBuildCurrentPage = false
+
 class Page extends Element {
 
     constructor(lang) {
@@ -23,7 +25,7 @@ class Page extends Element {
         return this
     }
 
-    style(selector, ...props) { //console.log(`Page will set style. Selector: ${selector}. Properties: ${props}.`)
+    style(selector, ...props) {
         if (props.length >= 2) {
             for (var i = 0; i < props.length - 1; i += 2) {
                 this.styleVals.style(selector, props[i], props[i + 1])
@@ -47,6 +49,11 @@ class Page extends Element {
     }
 
     build(stopIfError) {
+        if (acceasy.didBuildCurrentPage) {
+            return
+        }
+        acceasy.didBuildCurrentPage = true
+
         super.build(stopIfError)
 
         if (this.successBuild || (!stopIfError && this.tag != null)) {
@@ -62,6 +69,7 @@ class Page extends Element {
             }
         }
     }
+    
 }
 
 export default {
@@ -73,7 +81,14 @@ export default {
      */
     newUsingLanguage: (lang) => {
         html.setElementsGlobally()
-        return new Page(lang)
+        const page = new Page(lang)
+        onload = () => {
+            page.build()
+            if (page.onload) {
+                page.onload()
+            }
+        }
+        return page
     },
 
     /**

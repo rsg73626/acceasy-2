@@ -1,10 +1,6 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-const myPage = page.newUsingLanguage('en-us')
-
-myPage
+page.newUsingLanguage('en-US')
     .cssVar('--font', '"Arial"')
     .cssVar('--h-back-color', 'red', '--m-back-color', 'green', '--f-back-color', 'blue')
     .style('html', 'width', '50%', 'height', '50%', 'font-family', 'var(--font)')
@@ -27,4 +23,3 @@ myPage
             .id('footer')
             .cls('footer')
     )
-    .build()

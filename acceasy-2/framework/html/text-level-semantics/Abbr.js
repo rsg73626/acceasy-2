@@ -8,21 +8,11 @@ export default class Abbr extends Element {
         this.title(title)
     }
 
-    title(value) {
-        if(acceasy.type.isString(value) || acceasy.type.isNumber(value)) {
-            this.set('title', value)
-        }
-        return this
-    }
-
 }
 
 Abbr.tagName = 'abbr'
 
 Abbr.buildFunctions = {
-
-    abbr: (title, ...content) => {
-        return new Abbr(content, title)
-    }
-
+    abbreviation: (title, ...content) => new Abbr(content, title),
+    abbr: (...content) => new Abbr(content)
 }

@@ -1,9 +1,6 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page.newUsingLanguage('en-us')
+page.newUsingLanguage('en-US')
     .body(
         table(
             caption('Simple Table Example'),
@@ -62,4 +59,3 @@ page.newUsingLanguage('en-us')
             )
         ).set('border', 1),
     )
-    .build();

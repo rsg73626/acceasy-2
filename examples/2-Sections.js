@@ -1,9 +1,6 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page.newUsingLanguage('en-us')
+page.newUsingLanguage('en-US')
     .cssVar('--header-color', 'red', '--main-color', 'blue', '--aside-color', 'green', '--footer-color', 'purple')
     .style('*', 'margin', 0, 'padding', 0)
     .style('html', 'width', '100%', 'height', '100%', 'color', 'white', 'font-family', 'Helvetica', 'font-size', '14px')
@@ -78,10 +75,9 @@ page.newUsingLanguage('en-us')
                 span('L').style('color', 'yellow')
             ).lang('en').style('font-weight', 'bold', 'font-size', '35px'),
             br(),
-            abbr('Autômato Celular', 'AC'), 
+            abbreviation('Autômato Celular', 'AC'), 
             br(),
-            abbr('Accessibility', 'a', 11, 'y').lang('en')
-        ).style('background-color', 'var(--footer-color)')
-        
+            abbreviation('Accessibility', 'a', 11, 'y').lang('en')
+        ).style('background-color', 'var(--footer-color)') 
     )
-    .build()
+    

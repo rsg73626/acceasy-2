@@ -1,9 +1,6 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page.newUsingLanguage('en-us')
+page.newUsingLanguage('en-US')
     .style('p', 'background-color', 'lightblue', 'width', '100%', 'height', '100%')
     .style('p', 'display', 'flex', 'justify-content', 'center', 'align-items', 'center')
     .style('p', 'margin', 0)
@@ -20,5 +17,4 @@ page.newUsingLanguage('en-us')
         [1, 1, 9, 8, 4, 4],
         [0, 0, 10, 10, 0, 0],
         11
-    )
-    .build()
+    )  
