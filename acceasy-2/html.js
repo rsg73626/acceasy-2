@@ -39,7 +39,6 @@ import Aside from './framework/html/sections/Aside.js'
 import Footer from './framework/html/sections/Footer.js'
 import H from './framework/html/sections/H.js'
 import Header from './framework/html/sections/Header.js'
-import Hgroup from './framework/html/sections/Hgroup.js'
 import Nav from './framework/html/sections/Nav.js'
 import Section from './framework/html/sections/Section.js'
 
@@ -97,7 +96,7 @@ const tags = [
     Img,
     Button, Datalist, Fieldset, Form, Input, Label, Legend, Meter, Optgroup, Option, Output, Progress, Select, Textarea,
     Address, Blockquote, Dd, Div, Dl, Dt, Figcaption, Figure, Hr, Kbd, Li, Main, Ol, S, Samp, Small, Sub, Sup, P, Pre, Ul,
-    Article, Aside, Footer, H, Header, Hgroup, Nav, Section,
+    Article, Aside, Footer, H, Header, Nav, Section,
     Caption, Col, Colgroup, Table, Tbody, Td, Tfoot, Th, Thead, Tr,
     A, Abbr, Acronym, B, Bdi, Bdo, Br, Cite, Code, Data, Dfn, Em, I, Mark, Q, Rb, Rp, Rt, Rtc, Ruby, Span, Strong, Time, U, Var, Wbr
 ]

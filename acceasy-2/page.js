@@ -9,7 +9,6 @@ class Page extends Element {
     constructor(lang) {
         super('body', [])
         
-        this.lang(lang)
         this.tag = document.body
         this.head = document.head
         
@@ -18,6 +17,7 @@ class Page extends Element {
         this.defaultCSSVarScope = 'html'
 
         acceasy.currentPage = this
+        acceasy.dom.set(document.documentElement, { 'lang': lang })
     }
 
     body(...content) {
@@ -57,7 +57,6 @@ class Page extends Element {
         super.build(stopIfError)
 
         if (this.successBuild || (!stopIfError && this.tag != null)) {
-
             this.styleVars.build()
             if (this.styleVars.successBuild) {
                 this.head.append(this.styleVars.tag)
