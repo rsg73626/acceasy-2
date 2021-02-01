@@ -8,21 +8,6 @@ export default class H extends Element {
         super(H.tagName(lvl), content)
     }
 
-    title() {
-        this.tagName = 'h1'
-        return this
-    }
-
-    subTitle() {
-        this.tagName = 'h2'
-        return this
-    }
-
-    subSubTitle() {
-        this.tagName = 'h3'
-        return this
-    }
-
     level(value) {
         if (acceasy.array.contains([1, 2, 3, 4, 5, 6], value)) {
             this.tagName = `h${value}`
@@ -62,10 +47,6 @@ H.buildFunctions = {
     
     h6: (...content) => {
         return new H(content, 6)
-    },
-    
-    title: (...content) => {
-        return new H(content, 1)
     },
     
     subTitle: (...content) => {

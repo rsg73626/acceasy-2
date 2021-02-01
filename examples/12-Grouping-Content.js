@@ -8,7 +8,7 @@ page.newUsingLanguage('en-US')
     .body(
         section(
             article(
-                title('<address>'),
+                h1('<address>'),
                 address(p('W3C ON Twitter:'), p(a('@w3c', 'https://twitter.com/w3c'))),
                 address(
                     span('UNIVERSITY INTERSCHOLASTIC LEAGUE'), 
@@ -17,11 +17,11 @@ page.newUsingLanguage('en-US')
                 ).style('display', 'flex', 'flex-direction', 'column')
             ),
             article(
-                title('<hr>'),
+                h1('<hr>'),
                 hr()
             ),
             article(
-                title('<pre>'),
+                h1('<pre>'),
                 p('This is the <code>Panel</code> constructor:'),
                 pre(
                     code(
@@ -34,7 +34,7 @@ page.newUsingLanguage('en-US')
                 )
             ),
             article(
-                title('<blockquote>'),
+                h1('<blockquote>'),
                 blockquote('[Fred] then said he liked [...] fish.'),
                 figure(
                     blockquote(
@@ -49,7 +49,7 @@ page.newUsingLanguage('en-US')
                 )
             ),
             article(
-                title('<dl>, <dt> and <dd>'),
+                h1('<dl>, <dt> and <dd>'),
                 dl(
                     dt('Blanco tequila'),
                     dd('The purest form of the blue agave spirit...'),
@@ -72,7 +72,7 @@ page.newUsingLanguage('en-US')
                 )
             ).style('height', '400px'),
             article(
-                title('<div>'),
+                h1('<div>'),
                 subTitle('My use of language and my cats'),
                 p('My cat’s behavior hasn’t changed much since her absence, except that she plays her new physique to the neighbors regularly, in an attempt to get pets.'),
                 div(

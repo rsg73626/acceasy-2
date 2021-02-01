@@ -19,11 +19,11 @@ page.newUsingLanguage('en-US')
         main(
             section(
                 article(
-                    title('About us'), 
+                    h1('About us'), 
                     p('Find more about us and our history.')
                 ).id('about'),
                 article(
-                    title('Products'), 
+                    h1('Products'), 
                     p('Find more about our products.'),
                     ol(
                         li(
@@ -47,7 +47,7 @@ page.newUsingLanguage('en-US')
                     ).grid([1, 2, 3])
                 ).id('products'),
                 article(
-                    title('Contact us'),
+                    h1('Contact us'),
                     p('Send us any question that you might have.')
                 ).id('contactus'),
             ).grid(1,2,3)

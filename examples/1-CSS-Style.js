@@ -8,6 +8,10 @@ page.newUsingLanguage('en-US')
     .style('#header', 'background-color', 'var(--h-back-color)')
     .style('#main', 'background-color', 'var(--m-back-color)')
     .style('#footer', 'background-color', 'var(--f-back-color)')
+    .head(
+        title('CSS Styles'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         style('html { color: lightgray; }', 'header { color: red; border: solid red 3px; border-radius: 10px;}'),
         header(p('Different manners to set styles.'))

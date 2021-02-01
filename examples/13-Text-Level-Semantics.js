@@ -8,15 +8,15 @@ page.newUsingLanguage('en-US')
     .body(
         section(
             article(
-                title('<q>'),
+                h1('<q>'),
                 p('The man said ', q('Things that are impossible just take longer'), '. I disagreed with him.')
             ),
             article(
-                title('<cite>'),
+                h1('<cite>'),
                 p('In the words of ', cite('Charles Bukowski'), ' - ', q('An intellectual says a simple thing in a hard way. An artist says a hard thing in a simple way.'))
             ),
             article(
-                title('<em>'),
+                h1('<em>'),
                 p('These examples show how changing the stress emphasis changes the meaning. First, a general statement of fact, with no stress:'),
                 p('Cats are cute animals.'),
 
@@ -61,7 +61,7 @@ page.newUsingLanguage('en-US')
                 )
             ),
             article(
-                title('<small>'),
+                h1('<small>'),
                 dl(
                     dt('Single room'),
                     dd('199 € ', small('breakfast included, VAT not included')),
@@ -87,13 +87,13 @@ page.newUsingLanguage('en-US')
                 p(strong(small('Continued use of this service will result in a kiss.')))
             ).style('height', '600px'),
             article(
-                title('<s>'),
+                h1('<s>'),
                 p('Buy our Iced Tea and Lemonade!'),
                 p(s('Recommended retail price: $3.99 per bottle')),
                 p(strong('Now selling for just $2.99 a bottle!'))
             ),
             article(
-                title('<dfn>'),
+                h1('<dfn>'),
 
                 p('In the following fragment, the term "Garage Door Opener" is first defined in the first paragraph, then used in the second. In both cases, its abbreviation is what is actually displayed.'),
                 p('The ', dfn(abbreviation('Garage Door Opener', 'GDO')), ' is a device that allows off-world teams to open the iris.'),
@@ -106,17 +106,17 @@ page.newUsingLanguage('en-US')
                 p('Teal’c activated his ', a('#gdo', abbreviation('Garage Door Opener', 'GDO')), ' and so Hammond ordered the iris to be opened.')
             ),
             article(
-                title('<data>'),
+                h1('<data>'),
                 subTitle(data('9678AOU879', 'The Instigator 2000').set('itemprop', 'product-id')).set('itemscope', '')
             ),
             article(
-                title('<var>'),
+                h1('<var>'),
                 p('If there are ', variable('n'), ' pipes leading to the ice cream factory then I expect at ', em('least'), ' ', variable('n'), ' flavors of ice cream to be available for purchase!'),
 
                 p('Then he turned to the blackboard and picked up the chalk. After a few moment’s thought, he wrote ', variable('E'), ' = ', variable('m'), ' ', variable('c'), 'ˆ2. The teached looker pleased.')
             ),
             article(
-                title('<samp>'),
+                h1('<samp>'),
                 p('The computer said ', samp('Too much cheese in tray two'), ' but I didn’t know what that meant'),
 
                 pre(
@@ -130,7 +130,7 @@ page.newUsingLanguage('en-US')
                 )
             ),
             article(
-                title('<kdb>'),
+                h1('<kdb>'),
                 p('To make George eat an apple, press ', kbd(kbd('Shift'), '+', kbd('F3'))),
 
                 p('To make George eat an apple, select ', kbd(kbd(samp('File')), '|', kbd(samp('Eat Apple...')))),
@@ -138,7 +138,7 @@ page.newUsingLanguage('en-US')
                 p('To make George eat an apple, select ', kbd('File | Eat Apple...'))
             ),
             article(
-                title('<sub> and <sup>'),
+                h1('<sub> and <sup>'),
                 p(
                     'The most intelligent women are',
                     span(abbr('M', sup('lle')), ' de Beauvoir').lang('fr'), ' and ',
@@ -150,18 +150,18 @@ page.newUsingLanguage('en-US')
                 )
             ),
             article(
-                title('<b>'),
+                h1('<b>'),
                 p('The ', b('frobonitor'), ' and ', b('barbinator'), ' components are fried.'),
                 p('You enter a small room. Your ', b('sword'), ' glows brighter. A ', b('rat'), ' scurries past the corner wall.')
             ),
             article(
-                title('<u>'),
+                h1('<u>'),
                 p('Among others, Japanese, Hungarian and Chinese names are generally written with the family name first: ', u('Wu'), ' Xiaoqian.'),
                 p('[...] and when the sun rises over the trees of fire, there are no other ', u('incediaris').cls('spelling'), ' as powerful in this collection of dwelling [...]'),
                 p('The ', u('see'), ' is full of fish')
             ),
             article(
-                title('<mark>'),
+                h1('<mark>'),
                 p('Consider the following quote:').lang('en-US'),
                 blockquote(
                     p('Look around and you will find, no-one’s really '), mark('colour'), ' blind.'
@@ -169,7 +169,7 @@ page.newUsingLanguage('en-US')
                 p('As we can tell from the ', em('spelling'), ' of the word, the person writing this quote is clearly not American.').lang('en-US')
             ),
             article(
-                title('<bdi> and <bdo>'),
+                h1('<bdi> and <bdo>'),
                 ul(
                     li('User ', bdi('jcranmer'), ': 12 posts.'),
                     li('User ', bdi('hober'), ': 5 posts.'),
@@ -177,7 +177,7 @@ page.newUsingLanguage('en-US')
                 )
             ),
             article(
-                title('<wbr>'),
+                h1('<wbr>'),
                 p('So then he pointed at the tiger and screamed "there', wbr(), 'is', wbr(), 'no', wbr(), 'way', wbr(), 'you', wbr(), 'are', wbr(), 'ever', wbr(), 'going', wbr(), 'to', wbr(), 'catch', wbr(), 'me"!')
             )
         )

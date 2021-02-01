@@ -5,7 +5,7 @@ page.newUsingLanguage('en-US')
     .style('body, main', 'width', '500px', 'height', '500px')
     .style('p', 'font-family', 'helvetica', 'font-weight', 'bold', 'text-align', 'center', 'line-height', '50px')
     .body(
-        title('Grid'),
+        h1('Grid'),
         subTitle('Uncomment the different grid values to see the different layouts.'),
         main(Array(9).fill((i)=>{ return p(i) }).map((f, i) => { return f(i + 1).style('background', ['lightblue', 'lightgreen', 'yellow', 'red', 'orange', 'purple', 'brown', 'cyan', 'gray'][i%9]) }))
         // .grid(

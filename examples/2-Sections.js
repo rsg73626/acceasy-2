@@ -3,8 +3,8 @@ import page from '../acceasy-2/page.js'
 page.newUsingLanguage('en-US')
     .cssVar('--header-color', 'red', '--main-color', 'blue', '--aside-color', 'green', '--footer-color', 'purple')
     .style('*', 'margin', 0, 'padding', 0)
-    .style('html', 'width', '100%', 'height', '200%', 'color', 'white', 'font-family', 'Helvetica', 'font-size', '14px')
-    .style('body', 'width', '100%', 'height', '200%')
+    .style('html', 'width', '100%', 'height', '180%', 'color', 'white', 'font-family', 'Helvetica', 'font-size', '14px')
+    .style('body', 'width', '100%', 'height', '180%')
     .style('header', 'width', '100%', 'height', '25%')
     .style('main', 'width', '100%', 'height', '25%')
     .style('aside', 'width', '100%', 'height', '25%')
@@ -26,7 +26,7 @@ page.newUsingLanguage('en-US')
                     h2('The first article')
                 ).id('article-1'),
                 article(
-                    title('Article II'),
+                    h1('Article II'),
                     subTitle('The second article')
                 ).id('article-2')
             )
@@ -49,15 +49,10 @@ page.newUsingLanguage('en-US')
                 li(h6('<h6>'))
             ),
             ol(
-                li(title('Title <h1>')),
+                li(h1('Title <h1>')),
                 li(subTitle('Subtitle <h2>')),
                 li(subSubTitle('Sub subtitle <h3>'))
             ),
-            ol(
-                li(h6('<6> to Title <h1>').title()),
-                li(h6('<3> to Subitle <h2>').subTitle()),
-                li(h6('<5> to Sub Subtitle <h1>').subSubTitle()),
-            )
         ).style('background-color', 'var(--aside-color)', 'display', 'flex', 'flex-direction', 'row', 'justify-content', 'space-around', 'align-items', 'center'),
         footer(
             acronym('Hypertext Markup Language', 

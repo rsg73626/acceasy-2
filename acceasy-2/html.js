@@ -1,4 +1,8 @@
+import Base from './framework/html/document-metadata/Base.js'
+import Link from './framework/html/document-metadata/Link.js'
+import Meta from './framework/html/document-metadata/Meta.js'
 import Style from './framework/html/document-metadata/Style.js'
+import Title from './framework/html/document-metadata/Title.js'
 
 import Img from './framework/html/embedded-content/Img.js'
 
@@ -87,12 +91,13 @@ import Wbr from './framework/html/text-level-semantics/Wbr.js'
 
 import Menu from './framework/html/custom/Menu.js'
 import MenuItem from './framework/html/custom/MenuItem.js'
+import Tag from './framework/html/custom/Tag.js'
 
 import MenuSize from './framework/enum/MenuSize.js'
 import MenuIconPosition from './framework/enum/MenuIconPosition.js'
 
 const tags = [
-    Style,
+    Base, Link, Meta, Style, Title,
     Img,
     Button, Datalist, Fieldset, Form, Input, Label, Legend, Meter, Optgroup, Option, Output, Progress, Select, Textarea,
     Address, Blockquote, Dd, Div, Dl, Dt, Figcaption, Figure, Hr, Kbd, Li, Main, Ol, S, Samp, Small, Sub, Sup, P, Pre, Ul,
@@ -102,7 +107,7 @@ const tags = [
 ]
 
 const customs = [
-    Menu, MenuItem
+    Menu, MenuItem, Tag
 ]
 
 const elements = [...tags, ...customs]

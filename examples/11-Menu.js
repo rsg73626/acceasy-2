@@ -6,22 +6,22 @@ page.newUsingLanguage('en-US')
     .style('.acceasy-menu', 'margin-top', '10px', 'margin-bottom', '10px')
     .style('body', 'width', '100%', 'height', '2500px')
     .body(
-        title('Menu small'),
+        h1('Menu small'),
         defaultMenu().size(MenuSize.small),
 
-        title('Menu medium'),
+        h1('Menu medium'),
         defaultMenu().size(MenuSize.medium),
 
-        title('Menu large'),
+        h1('Menu large'),
         defaultMenu().size(MenuSize.large),
 
-        title('Menu extra large'),
+        h1('Menu extra large'),
         defaultMenu().size(MenuSize.extraLarge),
 
-        title('Menu extra extra large'),
+        h1('Menu extra extra large'),
         defaultMenu().size(MenuSize.extraExtraLarge),
 
-        title('Menu with icon'),
+        h1('Menu with icon'),
 
         subTitle('Icons at left'),
         mn(
@@ -37,7 +37,7 @@ page.newUsingLanguage('en-US')
             mi('Item 3', '#').icon('fa fa-smile-o', 'Smile icon').iconPosition(MenuIconPosition.right)
         ),
 
-        title('Menu with suboptions'),
+        h1('Menu with suboptions'),
 
         subTitle('Simple'),
         mn(
@@ -74,7 +74,7 @@ page.newUsingLanguage('en-US')
             mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon').iconPosition(MenuIconPosition.right)
         ),
 
-        title('Personalized colors'),
+        h1('Personalized colors'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),
@@ -89,7 +89,7 @@ page.newUsingLanguage('en-US')
         .submenuTextColor('white')
         .submenuTextColorHover('lightblue'),
 
-        title('Personalized colors II'),
+        h1('Personalized colors II'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
             .icon('fa fa-home fa-lg', 'Home icon')
@@ -113,7 +113,7 @@ page.newUsingLanguage('en-US')
             .submenuTextColor('black').submenuTextColorHover('yellow'),
         ),
 
-        title('Personalized colors III'),
+        h1('Personalized colors III'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
             .icon('fa fa-home fa-lg', 'Home icon')
@@ -137,7 +137,7 @@ page.newUsingLanguage('en-US')
             .submenuTextColor('lightblue').submenuTextColorHover('darkblue'),
         ),
 
-        title('Personalized colors IV'),
+        h1('Personalized colors IV'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
             .icon('fa fa-home fa-lg', 'Home icon')
@@ -161,7 +161,7 @@ page.newUsingLanguage('en-US')
             .submenuTextColor('darkblue').submenuTextColorHover('lightblue'),
         ),
 
-        title('Personalized colors using shortcut'),
+        h1('Personalized colors using shortcut'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
             .icon('fa fa-home fa-lg', 'Home icon')
@@ -176,7 +176,7 @@ page.newUsingLanguage('en-US')
             .colors('darkblue', 'lightblue', 'lightblue', 'darkblue', 'lightblue', 'darkblue', 'darkblue', 'lightblue'),
         ),
 
-        title('Personalized colors using shortcut II'),
+        h1('Personalized colors using shortcut II'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),

@@ -10,7 +10,7 @@ class Page extends Element {
         super('body', [])
         
         this.tag = document.body
-        this.head = document.head
+        this.headElement = document.head
         
         this.styleVars = new Style()
         this.styleVals = new Style()
@@ -18,6 +18,18 @@ class Page extends Element {
 
         acceasy.currentPage = this
         acceasy.dom.set(document.documentElement, { 'lang': lang })
+    }
+
+    head(...content) {
+        content.forEach(element => {
+            if (acceasy.type.isObject(element) && element.isElement) {
+                element.build()
+                if (element.successBuild) {
+                    this.headElement.append(element.tag)
+                }
+            }
+        })
+        return this
     }
 
     body(...content) {
@@ -59,12 +71,12 @@ class Page extends Element {
         if (this.successBuild || (!stopIfError && this.tag != null)) {
             this.styleVars.build()
             if (this.styleVars.successBuild) {
-                this.head.append(this.styleVars.tag)
+                this.headElement.append(this.styleVars.tag)
             }
             
             this.styleVals.build()
             if (this.styleVals.successBuild) {
-                this.head.append(this.styleVals.tag)
+                this.headElement.append(this.styleVals.tag)
             }
         }
     }

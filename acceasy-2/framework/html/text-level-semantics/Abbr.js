@@ -3,7 +3,7 @@ import Element from '../Element.js'
 
 export default class Abbr extends Element {
 
-    constructor(content, title) {
+    constructor(content, title = null) {
         super(Abbr.tagName, content, true, false, true)
         this.title(title)
     }
