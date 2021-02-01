@@ -3,6 +3,10 @@ import page from '../acceasy-2/page.js'
 const defaultMenu = () => mn(mi('Item 1', '#'), mi('Item 2', '#'), mi('Item 3', '#'))
 
 page.newUsingLanguage('en-US')
+    .head(
+        title('Menu'),
+        meta().set('charset', 'utf-8')
+    )
     .style('.acceasy-menu', 'margin-top', '10px', 'margin-bottom', '10px')
     .style('body', 'width', '100%', 'height', '2500px')
     .body(

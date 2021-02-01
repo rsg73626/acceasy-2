@@ -1,6 +1,10 @@
 import page from '../acceasy-2/page.js'
 
 page.newUsingLanguage('en-US')
+    .head(
+        title('Table'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         table(
             caption('Simple Table Example'),

@@ -4,6 +4,10 @@ page.newUsingLanguage('en-US')
     .style('*', 'margin', 0, 'padding', 0)
     .style('body, main', 'width', '500px', 'height', '500px')
     .style('p', 'font-family', 'helvetica', 'font-weight', 'bold', 'text-align', 'center', 'line-height', '50px')
+    .head(
+        title('Grid Layouts'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         h1('Grid'),
         subTitle('Uncomment the different grid values to see the different layouts.'),

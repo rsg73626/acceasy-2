@@ -12,6 +12,10 @@ const sudokuBlock = () => {
 }
 
 page.newUsingLanguage('en-US')
+    .head(
+        title('Grid Sudoku'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         sudokuBlock(), sudokuBlock(), sudokuBlock(), 
         sudokuBlock(), sudokuBlock(), sudokuBlock(), 

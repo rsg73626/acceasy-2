@@ -9,6 +9,10 @@ page.newUsingLanguage('en-US')
     .style('main', 'width', '100%', 'height', '25%')
     .style('aside', 'width', '100%', 'height', '25%')
     .style('footer', 'width', '100%', 'height', '25%')
+    .head(
+        title('Sections'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         header(
             nav(

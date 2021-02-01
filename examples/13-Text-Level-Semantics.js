@@ -1,6 +1,10 @@
 import page from '../acceasy-2/page.js'
 
 page.newUsingLanguage('en-US')
+    .head(
+        title('Text Level Semantics'),
+        meta().set('charset', 'utf-8')
+    )
     .style('html, body', 'width', '100%')
     .style('section', 'width', '80%', 'margin', 'auto')
     .style('section article', 'width', '100%', 'height', '350px', 'margin-top', '20px', 'padding', '10px', 'border-radius', '10px', 'border', 'black 2px solid', 'background', 'lightblue')

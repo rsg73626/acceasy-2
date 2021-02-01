@@ -1,6 +1,10 @@
 import page from '../acceasy-2/page.js'
 
 page.newUsingLanguage('en-US')
+    .head(
+        title('Form Complete'),
+        meta().set('charset', 'utf-8')
+    )
     .style('fieldset', 'display', 'flex', 'flex-direction', 'column', 'background', 'pink', 'border-color', 'black', 'border-radius', '10px', 'margin', '15px 0')
     .style('fieldset legend', 'font-weight', 'bold', 'color', 'white', 'background', 'black', 'font-size', '20px', 'padding', '5px', 'border-radius', '4px')
     .style('fieldset > *', 'margin', '5px 0')

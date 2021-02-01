@@ -4,6 +4,10 @@ page.newUsingLanguage('en-US')
     .style('p', 'background-color', 'lightblue', 'width', '100%', 'height', '100%')
     .style('p', 'display', 'flex', 'justify-content', 'center', 'align-items', 'center')
     .style('p', 'margin', 0)
+    .head(
+        title('Grid Complex'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         Array(10).fill((v) => { return p(v) }).map((f, i) => { return f(`Content ${ i + 1 }`).style('background-color', ['pink', 'yellow', 'lightgreen', 'orange', 'lightblue'][i%5]) }),
         p('abc').style('background-color', 'red')
