@@ -3,16 +3,9 @@ import Element from '../Element.js'
 
 export default class Abbr extends Element {
 
-    constructor(content, title) {
+    constructor(content, title = null) {
         super(Abbr.tagName, content, true, false, true)
         this.title(title)
-    }
-
-    title(value) {
-        if(acceasy.type.isString(value) || acceasy.type.isNumber(value)) {
-            this.set('title', value)
-        }
-        return this
     }
 
 }
@@ -20,9 +13,6 @@ export default class Abbr extends Element {
 Abbr.tagName = 'abbr'
 
 Abbr.buildFunctions = {
-
-    abbr: (title, ...content) => {
-        return new Abbr(content, title)
-    }
-
+    abbreviation: (title, ...content) => new Abbr(content, title),
+    abbr: (...content) => new Abbr(content)
 }

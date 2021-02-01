@@ -1,19 +1,19 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page('en-us')
+page.newUsingLanguage('en-US')
     .cssVar('--header-color', 'red', '--main-color', 'blue', '--aside-color', 'green', '--footer-color', 'purple')
     .style('*', 'margin', 0, 'padding', 0)
-    .style('html', 'width', '100%', 'height', '100%', 'color', 'white', 'font-family', 'Helvetica', 'font-size', '14px')
-    .style('body', 'width', '100%', 'height', '100%')
+    .style('html', 'width', '100%', 'height', '180%', 'color', 'white', 'font-family', 'Helvetica', 'font-size', '14px')
+    .style('body', 'width', '100%', 'height', '180%')
     .style('header', 'width', '100%', 'height', '25%')
     .style('main', 'width', '100%', 'height', '25%')
     .style('aside', 'width', '100%', 'height', '25%')
     .style('footer', 'width', '100%', 'height', '25%')
+    .head(
+        title('Sections'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
-
         header(
             nav(
                 ul(
@@ -23,24 +23,18 @@ page('en-us')
                 )
             ).style('background-color', 'lightgray')
         ).style('background-color', 'var(--header-color)'),
-
         main(
             section(
                 article(
-                    hgroup(
-                        h1('Article I'),
-                        h2('The first article')
-                    )
+                    h1('Article I'),
+                    h2('The first article')
                 ).id('article-1'),
                 article(
-                    hgroup(
-                        title('Article II'),
-                        subTitle('The second article')
-                    )
+                    h1('Article II'),
+                    subTitle('The second article')
                 ).id('article-2')
             )
         ).style('background-color', 'var(--main-color)'),
-
         aside(
             ol(
                 li(h(1, '<h1>')),
@@ -59,17 +53,11 @@ page('en-us')
                 li(h6('<h6>'))
             ),
             ol(
-                li(title('Title <h1>')),
+                li(h1('Title <h1>')),
                 li(subTitle('Subtitle <h2>')),
                 li(subSubTitle('Sub subtitle <h3>'))
             ),
-            ol(
-                li(h6('<6> to Title <h1>').title()),
-                li(h6('<3> to Subitle <h2>').subTitle()),
-                li(h6('<5> to Sub Subtitle <h1>').subSubTitle()),
-            )
         ).style('background-color', 'var(--aside-color)', 'display', 'flex', 'flex-direction', 'row', 'justify-content', 'space-around', 'align-items', 'center'),
-        
         footer(
             acronym('Hypertext Markup Language', 
                 span('H').style('color', 'lightgreen'),
@@ -78,10 +66,9 @@ page('en-us')
                 span('L').style('color', 'yellow')
             ).lang('en').style('font-weight', 'bold', 'font-size', '35px'),
             br(),
-            abbr('Autômato Celular', 'AC'), 
+            abbreviation('Autômato Celular', 'AC'), 
             br(),
-            abbr('Accessibility', 'a', 11, 'y').lang('en')
-        ).style('background-color', 'var(--footer-color)')
-        
+            abbreviation('Accessibility', 'a', 11, 'y').lang('en')
+        ).style('background-color', 'var(--footer-color)') 
     )
-    .build()
+    

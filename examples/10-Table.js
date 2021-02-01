@@ -1,9 +1,10 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page('en-us')
+page.newUsingLanguage('en-US')
+    .head(
+        title('Table'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         table(
             caption('Simple Table Example'),
@@ -62,4 +63,3 @@ page('en-us')
             )
         ).set('border', 1),
     )
-    .build();

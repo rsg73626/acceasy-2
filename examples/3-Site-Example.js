@@ -1,9 +1,10 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page('en-us')
+page.newUsingLanguage('en-US')
+    .head(
+        title('Site Example'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
         p('Content 1'),
         p('Content 2'),
@@ -22,11 +23,11 @@ page('en-us')
         main(
             section(
                 article(
-                    title('About us'), 
+                    h1('About us'), 
                     p('Find more about us and our history.')
                 ).id('about'),
                 article(
-                    title('Products'), 
+                    h1('Products'), 
                     p('Find more about our products.'),
                     ol(
                         li(
@@ -50,7 +51,7 @@ page('en-us')
                     ).grid([1, 2, 3])
                 ).id('products'),
                 article(
-                    title('Contact us'),
+                    h1('Contact us'),
                     p('Send us any question that you might have.')
                 ).id('contactus'),
             ).grid(1,2,3)
@@ -62,4 +63,4 @@ page('en-us')
         ).grid([1, 2, 3])
     )
     .grid([1, 2, 3, 4], 5, 6, 7, 8)
-    .build()
+    

@@ -1,14 +1,15 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page('en-us')
+page.newUsingLanguage('en-US')
     .style('*', 'margin', 0, 'padding', 0)
     .style('body, main', 'width', '500px', 'height', '500px')
     .style('p', 'font-family', 'helvetica', 'font-weight', 'bold', 'text-align', 'center', 'line-height', '50px')
+    .head(
+        title('Grid Layouts'),
+        meta().set('charset', 'utf-8')
+    )
     .body(
-        title('Grid'),
+        h1('Grid'),
         subTitle('Uncomment the different grid values to see the different layouts.'),
         main(Array(9).fill((i)=>{ return p(i) }).map((f, i) => { return f(i + 1).style('background', ['lightblue', 'lightgreen', 'yellow', 'red', 'orange', 'purple', 'brown', 'cyan', 'gray'][i%9]) }))
         // .grid(
@@ -112,4 +113,3 @@ page('en-us')
         //     [0,7,0,8,0,9]
         // )
     )
-    .build()

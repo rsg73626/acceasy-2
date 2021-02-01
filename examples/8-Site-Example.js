@@ -1,11 +1,10 @@
 import page from '../acceasy-2/page.js'
-import html from '../acceasy-2/html.js'
 
-html.setElementsGlobally()
-
-page('en-us')
-    // .style('*', 'margin', 0, 'padding', 0)
-    // .style('html, body', 'width', '100%', 'height', '100%', 'font-family', 'Helvetica', 'font-size', '22px')
+page.newUsingLanguage('en-US')
+    .head(
+        title('Site Example'),
+        meta().set('charset', 'utf-8')
+    )
     .style('h2, h3, h4, h5, h6', 'font-weight', 'normal')
     .style('nav', 'width', '100%', 'height', '50px')
     .style('nav ul', 'margin', 0, 'padding', 0, 'width', '100%', 'height', '100%', 'list-style', 'none', 'display', 'flex', 'flex-direction', 'row', 'align-items', 'center')
@@ -97,17 +96,17 @@ page('en-us')
     )
     .grid(1,2,3,4)
     .gridRowHeights('50px', '100px', 'calc(100% - 200px)', '50px')
-    .build();
+    .onload = () => {
+        const colors = ['lightgreen', 'orange', 'lightblue', 'violet'];
+        const ids = ['about', 'portfolio', 'clients', 'contactme'];
+        ids.forEach((str, i) => { 
+            const link = document.getElementById(`${str}-link`)
+            const section = document.getElementById(`${str}`)
+            link.addEventListener('mouseover', () => { section.style.background = colors[i % colors.length] })
+            link.addEventListener('mouseout', () => { section.style.background = 'white' })
+            section.addEventListener('mouseover', () => { link.style['border-bottom'] = `solid 5px ${colors[i % colors.length]}` })
+            section.addEventListener('mouseout', () => { link.style['border-bottom'] = 'none' })
+        });
 
-const colors = ['lightgreen', 'orange', 'lightblue', 'violet'];
-const ids = ['about', 'portfolio', 'clients', 'contactme'];
-ids.forEach((str, i) => { 
-    const link = document.getElementById(`${str}-link`)
-    const section = document.getElementById(`${str}`)
-    link.addEventListener('mouseover', () => { section.style.background = colors[i % colors.length] })
-    link.addEventListener('mouseout', () => { section.style.background = 'white' })
-    section.addEventListener('mouseover', () => { link.style['border-bottom'] = `solid 5px ${colors[i % colors.length]}` })
-    section.addEventListener('mouseout', () => { link.style['border-bottom'] = 'none' })
-});
-
-document.getElementById('jobs').childNodes.forEach((child, i) => { child.style.background = ['red', 'green', 'blue', 'brown'][i % 4] })
+        document.getElementById('jobs').childNodes.forEach((child, i) => { child.style.background = ['red', 'green', 'blue', 'brown'][i % 4] })
+    }

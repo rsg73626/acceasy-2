@@ -7,13 +7,6 @@ export default class Acronym extends Element {
         this.title(title)
     }
 
-    title(value) {
-        if(acceasy.type.isString(value) || acceasy.type.isNumber(value)) {
-            this.set('title', value)
-        }
-        return this
-    }
-
 }
 
 Acronym.tagName = 'acronym'

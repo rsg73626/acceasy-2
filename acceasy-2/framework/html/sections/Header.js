@@ -3,7 +3,7 @@ import Element from '../Element.js'
 export default class Header extends Element {
 
     constructor(content = null) {
-        super(Header.tagName, content, true, true, true, ['string', 'number'])
+        super(Header.tagName, content)
     }
 
 }
