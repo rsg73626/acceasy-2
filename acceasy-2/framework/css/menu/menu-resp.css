@@ -1,0 +1,23 @@
+
+.acceasy-menu { width: 100%; }
+
+.acceasy-menu-button {
+    display: block !important;
+}
+
+.acceasy-menu-list {
+    display: none;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.acceasy-menuitem, .acceasy-menuitem-with-suboptions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.acceasy-menuitem-with-suboptions {
+    display: grid;
+    grid-template-columns: auto;
+}
