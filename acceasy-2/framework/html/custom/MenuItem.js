@@ -1,6 +1,6 @@
 import Element from '../Element.js'
 import A from '../text-level-semantics/A.js'
-import Span from '../text-level-semantics/Span.js'
+import I from '../text-level-semantics/I.js'
 import Ul from '../grouping-content/Ul.js'
 import MenuIconPosition from '../../enum/MenuIconPosition.js'
 
@@ -236,7 +236,6 @@ export default class MenuItem extends Element {
         this.link = a
         this.subMenu = content
         this.iconName = null
-        this.iconDescription = null
         this.iconPos = MenuIconPosition.left
         this.suboptionsIconPos = MenuIconPosition.right
         this.suboptionsIcon = true
@@ -250,12 +249,9 @@ export default class MenuItem extends Element {
         a.set('tabindex', 0)
     }
 
-    icon(name, description = null) {
+    icon(name) {
         if (acceasy.type.isString(name)) {
             this.iconName = name
-        }
-        if (acceasy.type.isString(description)) {
-            this.iconDescription = description
         }
         return this
     }
@@ -360,19 +356,14 @@ export default class MenuItem extends Element {
 
     build(stopIfError) {
         if (this.iconName) {
-            const span = new Span()
-            span.cls('acceasy-menuitem-icon')
-            span.cls(this.iconName)
-            if (this.iconDescription) {
-                span.set('role', 'img')
-                span.set('aria-label', this.iconDescription)
-            } else {
-                span.set('role', 'none')
-            }
+            const iTag = new I()
+            iTag.cls('acceasy-menuitem-icon')
+            iTag.cls(this.iconName)
+            iTag.set('aria-hidden', "true")
             if (this.iconPos == MenuIconPosition.left) {
-                this.link.content = [span, this.link.content]
+                this.link.content = [iTag, this.link.content]
             } else {
-                this.link.content = [this.link.content, span]
+                this.link.content = [this.link.content, iTag]
             }
             this.link.cls(`acceasy-menuitem-link-icon-${this.iconPos}`)
         }
@@ -388,10 +379,10 @@ export default class MenuItem extends Element {
             this.link.set('onfocus', 'acceasy.framework.menuitem.linkOnFocus(this)')
 
             if (this.suboptionsIcon) {
-                const span = new Span()
-                span.cls('fa fa-chevron-down fa-lg')
-                span.cls('acceasy-menuitem-icon-suboptions')
-                span.set('aria-role', 'img', 'aria-label', 'shrink and expand icon')
+                const iTag = new I()
+                iTag.cls('fa fa-chevron-down fa-lg')
+                iTag.cls('acceasy-menuitem-icon-suboptions')
+                iTag.set('aria-hidden', "true")
 
                 var pos = this.suboptionsIconPos
                 if (this.iconName && pos == this.iconPos) {
@@ -399,9 +390,9 @@ export default class MenuItem extends Element {
                 }
 
                 if (pos == MenuIconPosition.left) {
-                    this.link.content = acceasy.type.isArray(this.link.content) ? [span, ...this.link.content] : [span, this.link.content]
+                    this.link.content = acceasy.type.isArray(this.link.content) ? [iTag, ...this.link.content] : [iTag, this.link.content]
                 } else {
-                    this.link.content = acceasy.type.isArray(this.link.content) ? [...this.link.content, span] : [this.link.content, span]
+                    this.link.content = acceasy.type.isArray(this.link.content) ? [...this.link.content, iTag] : [this.link.content, iTag]
                 }
 
                 if (this.iconName) {
