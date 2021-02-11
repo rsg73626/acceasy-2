@@ -29,16 +29,16 @@ page.newUsingLanguage('en-US')
 
         subTitle('Icons at left'),
         mn(
-            mi('Item 1', '#').icon('fa fa-home fa-lg', 'Home icon'),
+            mi('Item 1', '#').icon('fa fa-home fa-lg'),
             mi('Item 2', '#').icon('fa fa-handshake-o fa-lg'),
-            mi('Item 3', '#').icon('fa fa-smile-o', 'Smile icon')
+            mi('Item 3', '#').icon('fa fa-smile-o')
         ),
 
         subTitle('Icons at right'),
         mn(
-            mi('Item 1', '#').icon('fa fa-home fa-lg', 'Home icon').iconPosition(MenuIconPosition.right),
+            mi('Item 1', '#').icon('fa fa-home fa-lg').iconPosition(MenuIconPosition.right),
             mi('Item 2', '#').icon('fa fa-handshake-o fa-lg').iconPosition(MenuIconPosition.right),
-            mi('Item 3', '#').icon('fa fa-smile-o', 'Smile icon').iconPosition(MenuIconPosition.right)
+            mi('Item 3', '#').icon('fa fa-smile-o').iconPosition(MenuIconPosition.right)
         ),
 
         h1('Menu with suboptions'),
@@ -66,23 +66,23 @@ page.newUsingLanguage('en-US')
 
         subTitle('Complete (icons at left and submenu options icon)'),
         mn(
-            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
+            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg'),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),
-            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon')
+            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o')
         ),
 
         subTitle('Complete II (icons at right and submenu options icon)'),
         mn(
-            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon').iconPosition(MenuIconPosition.right),
+            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg').iconPosition(MenuIconPosition.right),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg').iconPosition(MenuIconPosition.right),
-            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon').iconPosition(MenuIconPosition.right)
+            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o').iconPosition(MenuIconPosition.right)
         ),
 
         h1('Personalized colors'),
         mn(
-            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
+            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg'),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),
-            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon')
+            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o')
         )
         .backgroundColor('pink')
         .backgroundColorHover('white')
@@ -96,7 +96,7 @@ page.newUsingLanguage('en-US')
         h1('Personalized colors II'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
-            .icon('fa fa-home fa-lg', 'Home icon')
+            .icon('fa fa-home fa-lg')
             .backgroundColor('pink').backgroundColorHover('red')
             .textColor('red').textColorHover('pink')
             .submenuBackgroundColor('black').submenuBackgroundColorHover('white')
@@ -110,7 +110,7 @@ page.newUsingLanguage('en-US')
             .submenuTextColor('white').submenuTextColorHover('purple'),
 
             mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
-            .icon('fa fa-smile-o', 'Smile icon')
+            .icon('fa fa-smile-o')
             .backgroundColor('lightblue').backgroundColorHover('darkblue')
             .textColor('darkblue').textColorHover('lightblue')
             .submenuBackgroundColor('yellow').submenuBackgroundColorHover('black')
@@ -120,7 +120,7 @@ page.newUsingLanguage('en-US')
         h1('Personalized colors III'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
-            .icon('fa fa-home fa-lg', 'Home icon')
+            .icon('fa fa-home fa-lg')
             .backgroundColor('pink').backgroundColorHover('red')
             .textColor('red').textColorHover('pink')
             .submenuBackgroundColor('red').submenuBackgroundColorHover('pink')
@@ -134,7 +134,7 @@ page.newUsingLanguage('en-US')
             .submenuTextColor('lightgreen').submenuTextColorHover('darkgreen'),
 
             mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
-            .icon('fa fa-smile-o', 'Smile icon')
+            .icon('fa fa-smile-o')
             .backgroundColor('lightblue').backgroundColorHover('darkblue')
             .textColor('darkblue').textColorHover('lightblue')
             .submenuBackgroundColor('darkblue').submenuBackgroundColorHover('lightblue')
@@ -144,7 +144,7 @@ page.newUsingLanguage('en-US')
         h1('Personalized colors IV'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
-            .icon('fa fa-home fa-lg', 'Home icon')
+            .icon('fa fa-home fa-lg')
             .backgroundColor('red').backgroundColorHover('pink')
             .textColor('pink').textColorHover('red')
             .submenuBackgroundColor('pink').submenuBackgroundColorHover('red')
@@ -158,7 +158,7 @@ page.newUsingLanguage('en-US')
             .submenuTextColor('darkgreen').submenuTextColorHover('lightgreen'),
 
             mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
-            .icon('fa fa-smile-o', 'Smile icon')
+            .icon('fa fa-smile-o')
             .backgroundColor('darkblue').backgroundColorHover('lightblue')
             .textColor('lightblue').textColorHover('darkblue')
             .submenuBackgroundColor('lightblue').submenuBackgroundColorHover('darkblue')
@@ -168,7 +168,7 @@ page.newUsingLanguage('en-US')
         h1('Personalized colors using shortcut'),
         mn(
             mi('Item 1', '#', mi('Item 1.1', '#'),  mi('Item 1.2', '#'),  mi('Item 1.3', '#'))
-            .icon('fa fa-home fa-lg', 'Home icon')
+            .icon('fa fa-home fa-lg')
             .colors('red', 'pink', 'pink', 'red', 'pink', 'red', 'red', 'pink'),
 
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#'))
@@ -176,15 +176,15 @@ page.newUsingLanguage('en-US')
             .colors('darkgreen', 'lightgreen', 'lightgreen', 'darkgreen', 'lightgreen', 'darkgreen', 'darkgreen', 'lightgreen'),
 
             mi('Item 3', '#', mi('Item 3.1', '#'),mi('Item 3.2', '#'), mi('Item 3.3', '#'))
-            .icon('fa fa-smile-o', 'Smile icon')
+            .icon('fa fa-smile-o')
             .colors('darkblue', 'lightblue', 'lightblue', 'darkblue', 'lightblue', 'darkblue', 'darkblue', 'lightblue'),
         ),
 
         h1('Personalized colors using shortcut II'),
         mn(
-            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg', 'Home icon'),
+            mi('Item 1', '#', mi('Item 1.1', '#'), mi('Item 1.2', '#'), mi('Item 1.3', '#')).icon('fa fa-home fa-lg'),
             mi('Item 2', '#', mi('Item 2.1', '#'), mi('Item 2.2', '#'), mi('Item 2.3', '#')).icon('fa fa-handshake-o fa-lg'),
-            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o', 'Smile icon')
+            mi('Item 2', '#', mi('Item 3.1', '#'), mi('Item 3.2', '#'), mi('Item 3.3', '#')).icon('fa fa-smile-o')
         )
         .colors('pink', 'white', 'white', 'pink', 'lightblue', 'white', 'white', 'lightblue'),
         
