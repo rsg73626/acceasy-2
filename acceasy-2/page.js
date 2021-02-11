@@ -25,7 +25,7 @@ class Page extends Element {
             if (acceasy.type.isObject(element) && element.isElement) {
                 element.build()
                 if (element.successBuild) {
-                    this.headElement.append(element.tag)
+                    this.headElement.prepend(element.tag)
                 }
             }
         })
